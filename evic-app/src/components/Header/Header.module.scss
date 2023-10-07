@@ -1,0 +1,23 @@
+.navLink {
+    font-size: 32px;
+    text-decoration: none;
+
+    color: yellow;
+    &:hover {
+        color: orange;
+    }
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+
+    width: 200px;
+    margin: 0 auto;
+
+}
+
+.header {
+    padding: 20px 15px;
+    border-bottom: solid black 1px;
+}
