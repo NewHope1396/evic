@@ -1,0 +1,33 @@
+.form {
+  width: 320px;
+  margin: 0 auto;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+
+  border: 1px solid black;
+  border-radius: 2px;
+}
+
+.label {
+  color: yellow;
+}
+
+.input {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  outline: none;
+
+  &:hover,
+  &:focus {
+    background-color: yellow;
+  }
+}
+
+.button {
+  &:hover,
+  &:focus {
+    background-color: yellow;
+  }
+}
