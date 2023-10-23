@@ -1,0 +1,35 @@
+.form {
+  display: flex;
+  flex-flow: column;
+  width: 400px;
+  margin: 0 auto;
+  border: 1px solid #cfcfcf;
+  border-radius: 8px;
+  padding: 30px 20px;
+
+  & input,
+  & button {
+    margin-bottom: 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 10px;
+
+    &:hover,
+    &:focus {
+      outline: none;
+      border: none;
+      background-color: #cfcfcf;
+      color: black;
+    }
+  }
+
+  & button {
+    margin-top: 50px;
+
+    &:hover,
+    &:focus {
+      background-color: #76a2ff;
+    }
+  }
+}
