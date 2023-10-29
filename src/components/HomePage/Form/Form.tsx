@@ -3,33 +3,35 @@
 import { useForm, SubmitHandler, Controller } from "react-hook-form";
 import styles from "./Form.module.scss";
 import { FC, useEffect, useRef, useState } from "react";
-import { IMakeData, IMake } from "@/interfaces/make.interface";
-import CreatableSelect from "react-select/creatable";
-import { SingleValue, SelectInstance } from "react-select";
+import { IMake, IMakeData } from "@/interfaces/make.interface";
+import Select from "react-select";
+import { SelectInstance } from "react-select";
 import carFetchers from "@/helpers/carFetchers";
+import TypeInputs from "@/interfaces/formType";
+import postData from "@/helpers/dataTgPost";
+import formSchema from "@/schemas/formSchema";
+import { yupResolver } from "@hookform/resolvers/yup";
 
 const Form: FC<IMakeData> = ({ makes }) => {
-  type Inputs = {
-    tel: Number;
-    name: string;
-    brand: { label: string; value: string };
-    model: { label: string; value: string };
-    comment: string;
-  };
-
   const makesRef = useRef<SelectInstance>(null);
   const modelsRef = useRef<SelectInstance>(null);
 
-  const resetFilters = () => {
+  const resetSelects = () => {
     makesRef?.current?.clearValue();
     modelsRef?.current?.clearValue();
   };
 
-  const { control, register, handleSubmit, reset } = useForm<Inputs>();
+  const {
+    control,
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<TypeInputs>({ resolver: yupResolver(formSchema) });
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
-    console.log(data);
-    resetFilters();
+  const onSubmit: SubmitHandler<TypeInputs> = (data) => {
+    postData(data);
+    resetSelects();
     reset();
   };
 
@@ -37,6 +39,7 @@ const Form: FC<IMakeData> = ({ makes }) => {
   const [modelOptions, setModelOptions] = useState<IMake[]>();
 
   const onBrandChange = (e: any) => {
+    modelsRef?.current?.clearValue();
     e && setBrand(e.value);
   };
 
@@ -53,15 +56,28 @@ const Form: FC<IMakeData> = ({ makes }) => {
 
   return (
     <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
-      <input placeholder="Телефон" {...register("tel")} />
-      <input placeholder="Ім'я" {...register("name")} />
+      <input
+        className={errors.tel && styles.isEmpty}
+        placeholder="Телефон (Обов'язково)"
+        {...register("tel")}
+      />
+      {errors.tel && <p className={styles.error}>{errors.tel.message}</p>}
+      <input
+        className={errors.name && styles.isEmpty}
+        placeholder="Ім'я"
+        {...register("name")}
+      />
+      {errors.name && <p className={styles.error}>{errors.name.message}</p>}
 
       <Controller
         name="brand"
         control={control}
         render={({ field }) => (
-          <CreatableSelect
+          <Select
             {...field}
+            noOptionsMessage={() => "Нічого не знайдено"}
+            isClearable
+            classNamePrefix="select"
             ref={makesRef}
             onChange={(e) => {
               onBrandChange(e);
@@ -73,23 +89,34 @@ const Form: FC<IMakeData> = ({ makes }) => {
           />
         )}
       />
+      {errors.brand && <p className={styles.error}>{errors.brand.message}</p>}
 
       <Controller
         name="model"
         control={control}
         render={({ field, fieldState: onChange }) => (
-          <CreatableSelect
+          <Select
             {...field}
+            isClearable
+            classNamePrefix="select"
             ref={modelsRef}
-            noOptionsMessage={() => "Спочатку виберіть Марку"}
+            noOptionsMessage={() => "Нічого не знайдено"}
             instanceId="model-select-id"
             placeholder={"Модель"}
             options={modelOptions}
           />
         )}
       />
+      {errors.model && <p className={styles.error}>{errors.model.message}</p>}
 
-      <input placeholder="Коментар" {...register("comment")} />
+      <input
+        className={errors.comment && styles.isEmpty}
+        placeholder="Коментар"
+        {...register("comment")}
+      />
+      {errors.comment && (
+        <p className={styles.error}>{errors.comment.message}</p>
+      )}
 
       <button type="submit">ЗАМОВИТИ</button>
     </form>

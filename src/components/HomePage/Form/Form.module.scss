@@ -1,7 +1,7 @@
 .form {
   display: flex;
   flex-flow: column;
-  width: 400px;
+  width: 350px;
   margin: 0 auto;
   border: 1px solid #cfcfcf;
   border-radius: 8px;
@@ -20,7 +20,6 @@
       outline: none;
       border: none;
       background-color: #cfcfcf;
-      color: black;
     }
   }
 
@@ -32,4 +31,15 @@
       background-color: #76a2ff;
     }
   }
+}
+
+.error {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 10px;
+  color: rgb(194, 6, 6);
+}
+
+.isEmpty {
+  border: 2px solid rgb(194, 6, 6) !important;
 }
