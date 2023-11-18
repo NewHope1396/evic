@@ -6,16 +6,16 @@ const Nav = () => {
     <nav className={styles.nav}>
       <ul>
         <li>
-          <Link href={""}>Послуги та ціни</Link>
+          <Link href={"#prices"}>Послуги та ціни</Link>
         </li>
         <li>
-          <Link href={""}>Про нас</Link>
+          <Link href={"#about"}>Про нас</Link>
         </li>
         <li>
-          <Link href={""}>Етапи роботи</Link>
+          <Link href={"#stages"}>Етапи роботи</Link>
         </li>
         <li>
-          <Link href={""}>Відгуки</Link>
+          <Link href={"#feedback"}>Відгуки</Link>
         </li>
       </ul>
     </nav>

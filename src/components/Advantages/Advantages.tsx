@@ -31,7 +31,7 @@ const Advantages = () => {
         </li>
         <li>
           <div className={styles.imgContainer}>
-            <Image alt="advantage-icon" src={""}></Image>
+            <Image alt="advantage-icon" src={Star}></Image>
           </div>
           <h3>Працюємо цілодобово</h3>
           <p>

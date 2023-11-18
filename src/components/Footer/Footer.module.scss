@@ -1,8 +1,68 @@
+@import "../../app/variables.module.scss";
+
 .footer {
-    padding: 20px;
-    text-align: center;
+  padding: 24px 80px;
+  text-align: center;
 
-    border-top: 1px solid black;
+  color: $White;
+  background-color: $Black;
 
-    color: lightgray;
+  & div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 48px;
+
+    & p {
+      font-size: 40px;
+      font-weight: 900;
+    }
+
+    & nav {
+      & ul {
+        display: flex;
+
+        & li {
+          padding: 12px 8px;
+
+          &:not(:last-child) {
+            margin-right: 16px;
+          }
+
+          & a {
+            color: $White;
+          }
+        }
+      }
+    }
+
+    & .socials {
+      margin-bottom: 0;
+
+      & a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 48px;
+        height: 48px;
+
+        background-color: $Red-1;
+        border-radius: 50%;
+
+        &:not(:last-child) {
+          margin-right: 24px;
+        }
+      }
+    }
+  }
+
+  & p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.6px;
+  }
+
+  .copy {
+    margin-top: 8px;
+  }
 }

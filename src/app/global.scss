@@ -1,7 +1,30 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   padding: 0;
   margin: 0 auto;
   text-align: center;
 }
 
-@import "../components/HomePage/Form/Selects.module.scss";
+ul,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+@import "../components/Form/Selects.module.scss";

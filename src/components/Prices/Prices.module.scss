@@ -1,0 +1,62 @@
+@import "../../app/variables.module.scss";
+
+.pricesSection {
+  background-color: $White;
+  padding: 80px;
+
+  & h2 {
+    margin: 0;
+    margin-bottom: 64px;
+    padding: 0;
+
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 52.8px;
+  }
+
+  & ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    & li {
+      width: calc(416px - 16 * 2px);
+      background-color: $Background;
+      margin-bottom: 32px;
+      padding: 16px;
+
+      & div {
+        width: 80px;
+        height: 64px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        padding-bottom: 16px;
+      }
+
+      &:not(:nth-child(3)) {
+        margin-right: 16px;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      .type {
+        color: $Black;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 22px;
+        padding-bottom: 16px;
+      }
+
+      .price {
+        color: $Red-1;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 25.2px;
+      }
+    }
+  }
+}
