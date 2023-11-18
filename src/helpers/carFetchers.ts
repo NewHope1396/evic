@@ -3,7 +3,8 @@ import axios from "axios";
 
 axios.defaults.baseURL = "https://cars-api-6lqp.onrender.com"
 
-const getMakes: (() => Promise<IMakeData>) = async () => {
+
+const getMakes: (() => Promise<IMake[]>) = async () => {
   try {
     const makes = await axios.get("/makes");
     return(makes.data)

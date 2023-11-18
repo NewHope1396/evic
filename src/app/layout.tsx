@@ -2,6 +2,57 @@ import "./global.scss";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import Container from "@/components/Container/Container";
+import localFont from "next/font/local";
+
+const gilroy = localFont({
+  src: [
+    {
+      path: "../fonts/Gilroy/Gilroy-Black.woff",
+      weight: "900",
+      style: "normal",
+    },
+    {
+      path: "../fonts/Gilroy/Gilroy-ExtraBold.woff",
+      weight: "800",
+      style: "normal",
+    },
+    {
+      path: "../fonts/Gilroy/Gilroy-Bold.woff",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../fonts/Gilroy/Gilroy-SemiBold.woff",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../fonts/Gilroy/Gilroy-Medium.woff",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../fonts/Gilroy/Gilroy-Regular.woff",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../fonts/Gilroy/Gilroy-Light.woff",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../fonts/Gilroy/Gilroy-UltraLight.woff",
+      weight: "200",
+      style: "normal",
+    },
+    {
+      path: "../fonts/Gilroy/Gilroy-Thin.woff",
+      weight: "100",
+      style: "normal",
+    },
+  ],
+});
 
 export const metadata = {
   title: "Future Evic Project",
@@ -15,7 +66,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className={gilroy.className}>
         <Container>
           <Header></Header>
           {children}

@@ -1,0 +1,58 @@
+@import "../../app/variables.module.scss";
+
+.hero {
+  padding: 80px;
+  background-image: url("../../public/Hero.png");
+  background-size: cover;
+  color: $White;
+  text-align: start;
+}
+
+.textContainer {
+  width: 600px;
+  padding: 80px 0;
+
+  & h1 {
+    font-size: 56px;
+    font-weight: 700;
+    margin-bottom: 48px;
+    line-height: 61.6px;
+  }
+
+  & p {
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 64px;
+    line-height: 25.2px;
+  }
+
+  & button {
+    padding: 18px 32px;
+    font-size: 20px;
+    font-weight: 500;
+    border: 2px solid $Red-1;
+    cursor: pointer;
+    line-height: 20px;
+
+    &:hover,
+    &:focus {
+      border: 2px solid $Red-2L;
+    }
+  }
+}
+
+.orderButton {
+  background-color: $Red-1;
+  color: $White;
+  margin-right: 16px;
+
+  &:hover,
+  &:focus {
+    background-color: $Red-2L;
+  }
+}
+
+.consultation {
+  background-color: $White;
+  color: $Black;
+}

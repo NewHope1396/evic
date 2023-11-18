@@ -3,7 +3,7 @@
 import { useForm, SubmitHandler, Controller } from "react-hook-form";
 import styles from "./Form.module.scss";
 import { FC, useEffect, useRef, useState } from "react";
-import { IMake, IMakeData } from "@/interfaces/make.interface";
+import { IMakeData, IMake } from "@/interfaces/make.interface";
 import Select from "react-select";
 import { SelectInstance } from "react-select";
 import carFetchers from "@/helpers/carFetchers";
