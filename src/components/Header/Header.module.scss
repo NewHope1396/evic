@@ -1,5 +1,10 @@
 @import "../../app/variables.module.scss";
 
+.header {
+  position: sticky;
+  top: 0;
+}
+
 .upperHeader {
   display: flex;
   justify-content: space-between;
@@ -34,7 +39,5 @@
 }
 
 .logo {
-  font-weight: 900;
-  font-size: 40px;
-  margin: 0;
+  color: $Gray !important;
 }

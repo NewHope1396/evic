@@ -6,3 +6,14 @@ $Background: #f9f9f9;
 $Gray: #ababab;
 $Black: #21272a;
 $Error: #f80808;
+
+:export {
+  red1: $Red-1;
+  red2: $Red-2L;
+  red3: $Red-3;
+  white1: $White;
+  bg: $Background;
+  gray1: $Gray;
+  black1: $Black;
+  err: $Error;
+}

@@ -2,7 +2,7 @@ import styles from "./Hero.module.scss";
 
 const Hero = () => {
   return (
-    <section className={styles.hero}>
+    <section id="hero" className={styles.hero}>
       <div className={styles.textContainer}>
         <h1>Надійна евакуація авто по всій Україні</h1>
         <p>

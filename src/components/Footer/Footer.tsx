@@ -3,12 +3,13 @@ import Link from "next/link";
 import Image from "next/image";
 import Telegram from "@/public/Telegram.svg";
 import Instagram from "@/public/instagram.svg";
+import { Logo } from "../Logo/Logo";
 
 export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div>
-        <p>EVIC</p>
+        <Logo option={styles.logo} />
         <nav>
           <ul>
             <li>

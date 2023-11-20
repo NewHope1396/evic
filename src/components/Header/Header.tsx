@@ -3,12 +3,13 @@ import styles from "./Header.module.scss";
 import Image from "next/image";
 import Tel from "@/public/tel.svg";
 import Nav from "./Navigation/Navigation";
+import { Logo } from "../Logo/Logo";
 
 export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.upperHeader}>
-        <p className={styles.logo}>EVIC</p>
+        <Logo option={styles.logo} />
         <div className={styles.telContainer}>
           <div className={styles.svgContainer}>
             <Image

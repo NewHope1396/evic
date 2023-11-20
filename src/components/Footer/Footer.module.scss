@@ -56,13 +56,11 @@
     }
   }
 
-  & p {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 19.6px;
-  }
-
   .copy {
     margin-top: 8px;
   }
+}
+
+.logo {
+  color: $White !important;
 }

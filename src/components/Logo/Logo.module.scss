@@ -1,0 +1,17 @@
+@import "../../app/variables.module.scss";
+
+.logo {
+  font-weight: 900;
+  font-size: 40px;
+  margin: 0;
+  cursor: pointer;
+  color: $Black;
+
+  &:hover {
+    color: $Red-1 !important;
+  }
+}
+
+.footerLogo {
+  color: $White;
+}
