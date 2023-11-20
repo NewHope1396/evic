@@ -6,36 +6,12 @@
 }
 
 .upperHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  text-align: start;
   padding: 24px 80px;
+  position: relative;
+  overflow: hidden;
 
   background-color: $White;
-}
-
-.svgContainer {
-  width: 32px;
-  height: 32px;
-  background-color: $Red-1;
-  margin-right: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  border-radius: 50%;
-}
-
-.telContainer {
-  display: flex;
-  align-items: center;
-}
-
-.telLink {
-  text-decoration: none;
-  color: $Black;
-  font-weight: 500;
-  line-height: 16px;
 }
 
 .logo {

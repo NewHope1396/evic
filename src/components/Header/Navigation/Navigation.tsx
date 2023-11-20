@@ -8,22 +8,22 @@ const Nav = () => {
     <nav className={styles.nav}>
       <ul>
         <li>
-          <Link id="navLink" to="prices" spy={true} offset={-150}>
+          <Link id="navLink" to="prices" spy={true} offset={-300}>
             Послуги та ціни
           </Link>
         </li>
         <li>
-          <Link id="navLink" to="about" spy={true} offset={-150}>
+          <Link id="navLink" to="about" spy={true} offset={-300}>
             Про нас
           </Link>
         </li>
         <li>
-          <Link id="navLink" to="stages" spy={true} offset={-150}>
+          <Link id="navLink" to="stages" spy={true} offset={-300}>
             Етапи роботи
           </Link>
         </li>
         <li>
-          <Link id="navLink" to="feedback" spy={true} offset={-150}>
+          <Link id="navLink" to="feedback" spy={true} offset={-300}>
             Відгуки
           </Link>
         </li>

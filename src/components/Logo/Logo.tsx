@@ -6,7 +6,7 @@ import { Link } from "react-scroll";
 
 export const Logo: FC<{ option: string }> = ({ option }) => {
   return (
-    <Link className={`${styles.logo} ${option}`} to="hero" offset={-150}>
+    <Link className={`${styles.logo} ${option}`} to="hero" offset={-168}>
       EVIC
     </Link>
   );

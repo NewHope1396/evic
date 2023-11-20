@@ -1,0 +1,33 @@
+@import "../../app/variables.module.scss";
+
+.btn {
+  padding: 18px 32px;
+  font-size: 20px;
+  font-weight: 500;
+  border: 2px solid $Red-1;
+  cursor: pointer;
+  line-height: 20px;
+
+  &:hover,
+  &:focus {
+    border: 2px solid $Red-2L;
+  }
+}
+
+.orderBtn {
+  @extend .btn;
+
+  background-color: $Red-1;
+  color: $White;
+
+  &:hover,
+  &:focus {
+    background-color: $Red-2L;
+  }
+}
+
+.consultationBtn {
+  @extend .btn;
+  background-color: $White;
+  color: $Black;
+}

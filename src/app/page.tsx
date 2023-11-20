@@ -4,7 +4,6 @@ import Prices from "@/components/Prices/Prices";
 import About from "@/components/About/About";
 import carFetchers from "@/helpers/carFetchers";
 import Stages from "@/components/Stages/Stages";
-import Order from "@/components/Order/Order";
 
 export default async function App() {
   const makes = await carFetchers.getMakes();
@@ -16,7 +15,6 @@ export default async function App() {
       <Prices />
       <About />
       <Stages />
-      <Order makes={makes} />
     </main>
   );
 }

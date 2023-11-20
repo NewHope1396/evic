@@ -43,4 +43,8 @@ li:has(#navLink.active) {
   }
 }
 
+button {
+  font-family: inherit;
+}
+
 @import "../components/Form/Selects.module.scss";
