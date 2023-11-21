@@ -12,16 +12,12 @@ export default async function App() {
 
   return (
     <main>
-      <Container>
-        <Header makes={makes}></Header>
-      </Container>
+      <Header makes={makes}></Header>
       <Hero makes={makes} />
-      <Container>
-        <Advantages />
-        <Prices />
-        <About />
-        <Stages />
-      </Container>
+      <Advantages />
+      <Prices />
+      <About />
+      <Stages />
     </main>
   );
 }

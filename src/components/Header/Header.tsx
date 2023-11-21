@@ -8,6 +8,7 @@ import { FC } from "react";
 import { IMakeData } from "@/interfaces/make.interface";
 import { Modal } from "../Modal/Modal";
 import { useState } from "react";
+import Container from "../Container/Container";
 
 export const Header: FC<IMakeData> = (makes) => {
   const [isOrderModalOpen, setIsOrderModalOpen] = useState(false);
@@ -15,10 +16,12 @@ export const Header: FC<IMakeData> = (makes) => {
   return (
     <>
       <header className={styles.header}>
-        <div className={styles.upperHeader}>
-          <Logo option={styles.logo} />
-          <ButtonsBlock setIsOrderModalOpen={setIsOrderModalOpen} />
-        </div>
+        <Container>
+          <div className={styles.upperHeader}>
+            <Logo option={styles.logo} />
+            <ButtonsBlock setIsOrderModalOpen={setIsOrderModalOpen} />
+          </div>
+        </Container>
         <Nav></Nav>
       </header>
       {isOrderModalOpen && <Modal makes={makes} option={"order"} />}

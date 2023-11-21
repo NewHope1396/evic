@@ -1,5 +1,9 @@
 @import "../../app/variables.module.scss";
 
+.section {
+  background-color: $Background;
+}
+
 .about {
   padding: 80px;
   display: flex;
