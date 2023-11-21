@@ -12,6 +12,7 @@ import Container from "../Container/Container";
 
 export const Header: FC<IMakeData> = (makes) => {
   const [isOrderModalOpen, setIsOrderModalOpen] = useState(false);
+  const [isConsultationModalOpen, setIsConsultationModalOpen] = useState(false);
 
   return (
     <>
@@ -19,12 +20,18 @@ export const Header: FC<IMakeData> = (makes) => {
         <Container>
           <div className={styles.upperHeader}>
             <Logo option={styles.logo} />
-            <ButtonsBlock setIsOrderModalOpen={setIsOrderModalOpen} />
+            <ButtonsBlock
+              setIsOrderModalOpen={setIsOrderModalOpen}
+              setIsConsultationModalOpen={setIsConsultationModalOpen}
+            />
           </div>
         </Container>
         <Nav></Nav>
       </header>
       {isOrderModalOpen && <Modal makes={makes} option={"order"} />}
+      {isConsultationModalOpen && (
+        <Modal makes={makes} option={"consultation"} />
+      )}
     </>
   );
 };
