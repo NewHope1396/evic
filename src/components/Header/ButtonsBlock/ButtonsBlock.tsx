@@ -1,15 +1,17 @@
 "use client";
 
-import styles from "./BbuttomsBlock.module.scss";
-import { useEffect, useState } from "react";
+import styles from "./ButtonsBlock.module.scss";
+import { FC, useEffect, useState } from "react";
 import debounce from "lodash.debounce";
-import { OrderButton } from "@/components/Buttons/OrderButton";
-import { ConsultationButton } from "@/components/Buttons/ConsultationButton";
 import Image from "next/image";
 import Tel from "@/public/tel.svg";
 import Link from "next/link";
+import { ConsultationBtn } from "./Buttons/ConsultationBtn";
+import { OrderBtn } from "./Buttons/OrderBtn";
 
-export const ButtonsBlock = () => {
+export const ButtonsBlock: FC<{
+  setIsModalOpen: Function;
+}> = ({ setIsModalOpen }) => {
   const logY = debounce(() => {
     if (window.scrollY > 500) {
       setIsHidden(false);
@@ -43,8 +45,8 @@ export const ButtonsBlock = () => {
         +380993290551
       </Link>
       <div className={styles.btnContainer}>
-        <ConsultationButton option={styles.btn} />
-        <OrderButton option={styles.btn} />
+        <ConsultationBtn />
+        <OrderBtn setIsModalOpen={setIsModalOpen} />
       </div>
     </div>
   );

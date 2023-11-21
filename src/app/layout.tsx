@@ -1,5 +1,4 @@
 import "./global.scss";
-import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import Container from "@/components/Container/Container";
 import localFont from "next/font/local";
@@ -68,7 +67,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={gilroy.className}>
         <Container>
-          <Header></Header>
           {children}
           <Footer></Footer>
         </Container>
