@@ -47,4 +47,8 @@ button {
   font-family: inherit;
 }
 
+.blocked {
+  overflow-y: hidden;
+}
+
 @import "../components/Forms/OrderForm/Selects.module.scss";

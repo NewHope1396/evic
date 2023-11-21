@@ -9,7 +9,6 @@ import styles from "./ConsultationFom.module.scss";
 
 export const ConsultationForm = () => {
   const {
-    control,
     register,
     handleSubmit,
     reset,
@@ -24,31 +23,41 @@ export const ConsultationForm = () => {
   };
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
-      <input
-        className={errors.name && styles.isEmpty}
-        placeholder="Ім'я"
-        {...register("name")}
-      />
-      {errors.name && <p className={styles.error}>{errors.name.message}</p>}
+    <div className={styles.formContainer}>
+      <h3>Замовити консультацію</h3>
+      <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+        <label htmlFor="name">
+          Ваше ім&apos;я<span>*</span>
+        </label>
+        <input
+          id="name"
+          className={errors.name && styles.isEmpty}
+          {...register("name")}
+        />
+        {errors.name && <p className={styles.error}>{errors.name.message}</p>}
 
-      <input
-        className={errors.tel && styles.isEmpty}
-        placeholder="Телефон (Обов'язково)"
-        {...register("tel")}
-      />
-      {errors.tel && <p className={styles.error}>{errors.tel.message}</p>}
+        <div className={styles.telContainer}>
+          <div className={styles.countryCode}>+380</div>
+          <input
+            className={errors.tel && styles.isEmpty}
+            placeholder="Телефон (Обов'язково)"
+            {...register("tel")}
+          />
+        </div>
+        {errors.tel && <p className={styles.error}>{errors.tel.message}</p>}
 
-      <input
-        className={errors.comment && styles.isEmpty}
-        placeholder="Коментар"
-        {...register("comment")}
-      />
-      {errors.comment && (
-        <p className={styles.error}>{errors.comment.message}</p>
-      )}
+        <textarea
+          className={errors.comment && styles.isEmpty}
+          placeholder="Коментар"
+          {...register("comment")}
+        />
 
-      <button type="submit">ЗАМОВИТИ</button>
-    </form>
+        {errors.comment && (
+          <p className={styles.error}>{errors.comment.message}</p>
+        )}
+
+        <button type="submit">ЗАМОВИТИ</button>
+      </form>
+    </div>
   );
 };

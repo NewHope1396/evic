@@ -28,9 +28,19 @@ export const Header: FC<IMakeData> = (makes) => {
         </Container>
         <Nav></Nav>
       </header>
-      {isOrderModalOpen && <Modal makes={makes} option={"order"} />}
+      {isOrderModalOpen && (
+        <Modal
+          makes={makes}
+          option={"order"}
+          setModalOpen={setIsOrderModalOpen}
+        />
+      )}
       {isConsultationModalOpen && (
-        <Modal makes={makes} option={"consultation"} />
+        <Modal
+          makes={makes}
+          option={"consultation"}
+          setModalOpen={setIsConsultationModalOpen}
+        />
       )}
     </>
   );

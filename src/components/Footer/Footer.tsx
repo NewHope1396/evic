@@ -4,6 +4,7 @@ import Image from "next/image";
 import Telegram from "@/public/Telegram.svg";
 import Instagram from "@/public/instagram.svg";
 import { Logo } from "../Logo/Logo";
+import Container from "../Container/Container";
 
 export default function Footer() {
   return (
