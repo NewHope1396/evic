@@ -2,10 +2,10 @@ import { FC } from "react";
 import styles from "./Btns.module.scss";
 
 export const OrderBtn: FC<{
-  setIsModalOpen: Function;
-}> = ({ setIsModalOpen }) => {
+  setIsOrderModalOpen: Function;
+}> = ({ setIsOrderModalOpen }) => {
   const handleClick = () => {
-    setIsModalOpen(true);
+    setIsOrderModalOpen(true);
   };
 
   return (

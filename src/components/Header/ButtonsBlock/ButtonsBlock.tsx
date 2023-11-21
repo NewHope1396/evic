@@ -10,8 +10,8 @@ import { ConsultationBtn } from "./Buttons/ConsultationBtn";
 import { OrderBtn } from "./Buttons/OrderBtn";
 
 export const ButtonsBlock: FC<{
-  setIsModalOpen: Function;
-}> = ({ setIsModalOpen }) => {
+  setIsOrderModalOpen: Function;
+}> = ({ setIsOrderModalOpen }) => {
   const logY = debounce(() => {
     if (window.scrollY > 500) {
       setIsHidden(false);
@@ -46,7 +46,7 @@ export const ButtonsBlock: FC<{
       </Link>
       <div className={styles.btnContainer}>
         <ConsultationBtn />
-        <OrderBtn setIsModalOpen={setIsModalOpen} />
+        <OrderBtn setIsOrderModalOpen={setIsOrderModalOpen} />
       </div>
     </div>
   );

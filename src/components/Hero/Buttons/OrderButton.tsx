@@ -3,10 +3,10 @@
 import { FC } from "react";
 import styles from "./Buttons.module.scss";
 import { useState } from "react";
-import Form from "../../Form/Form";
 import { IMakeData } from "@/interfaces/make.interface";
+import { Modal } from "@/components/Modal/Modal";
 
-export const OrderButton: FC<{ makes: IMakeData }> = ({ makes }) => {
+export const OrderButton: FC<IMakeData> = (makes) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = () => {
@@ -18,11 +18,7 @@ export const OrderButton: FC<{ makes: IMakeData }> = ({ makes }) => {
       <button onClick={handleClick} className={styles.orderBtn}>
         Замовити евакуатор
       </button>
-      {isOpen && (
-        <div className={styles.modal}>
-          <Form makes={makes.makes} />
-        </div>
-      )}
+      {isOpen && <Modal makes={makes} option="order" />}
     </>
   );
 };

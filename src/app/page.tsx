@@ -5,18 +5,23 @@ import About from "@/components/About/About";
 import carFetchers from "@/helpers/carFetchers";
 import Stages from "@/components/Stages/Stages";
 import { Header } from "@/components/Header/Header";
+import Container from "@/components/Container/Container";
 
 export default async function App() {
   const makes = await carFetchers.getMakes();
 
   return (
     <main>
-      <Header makes={makes}></Header>
+      <Container>
+        <Header makes={makes}></Header>
+      </Container>
       <Hero makes={makes} />
-      <Advantages />
-      <Prices />
-      <About />
-      <Stages />
+      <Container>
+        <Advantages />
+        <Prices />
+        <About />
+        <Stages />
+      </Container>
     </main>
   );
 }

@@ -1,6 +1,5 @@
 import "./global.scss";
 import Footer from "@/components/Footer/Footer";
-import Container from "@/components/Container/Container";
 import localFont from "next/font/local";
 
 const gilroy = localFont({
@@ -66,10 +65,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={gilroy.className}>
-        <Container>
-          {children}
-          <Footer></Footer>
-        </Container>
+        {children}
+        <Footer></Footer>
       </body>
     </html>
   );

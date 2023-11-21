@@ -1,3 +1,4 @@
+
 type TypeInputs = {
  tel: string;
  name?: string | undefined;
@@ -5,5 +6,13 @@ type TypeInputs = {
  model: { label?: string | undefined; value?: string  | undefined} | null;
  comment?: string | undefined;
 };
+
+export type TypeConsultationInputs = {
+
+  name: string;
+  tel: string;
+  comment?: string | undefined;
+
+}
   
 export default TypeInputs;

@@ -1,10 +1,23 @@
-import { FC } from "react";
-import styles from "./Buttons.module.scss";
+"use client";
 
-export const ConsultationButton: FC<{ option: string }> = ({ option }) => {
+import { Modal } from "@/components/Modal/Modal";
+import styles from "./Buttons.module.scss";
+import { FC, useState } from "react";
+import { IMakeData } from "@/interfaces/make.interface";
+
+export const ConsultationButton: FC<IMakeData> = (makes) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleClick = () => {
+    setIsOpen(true);
+  };
+
   return (
-    <button className={`${styles.consultationBtn} ${option}`}>
-      Консультація
-    </button>
+    <>
+      <button onClick={handleClick} className={styles.consultationBtn}>
+        Консультація
+      </button>
+      {isOpen && <Modal makes={makes} option="consultation" />}
+    </>
   );
 };

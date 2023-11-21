@@ -10,18 +10,18 @@ import { Modal } from "../Modal/Modal";
 import { useState } from "react";
 
 export const Header: FC<IMakeData> = (makes) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isOrderModalOpen, setIsOrderModalOpen] = useState(false);
 
   return (
     <>
       <header className={styles.header}>
         <div className={styles.upperHeader}>
           <Logo option={styles.logo} />
-          <ButtonsBlock setIsModalOpen={setIsModalOpen} />
+          <ButtonsBlock setIsOrderModalOpen={setIsOrderModalOpen} />
         </div>
         <Nav></Nav>
       </header>
-      {isModalOpen && <Modal makes={makes.makes} />}
+      {isOrderModalOpen && <Modal makes={makes} option={"order"} />}
     </>
   );
 };
