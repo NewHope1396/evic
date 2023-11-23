@@ -11,8 +11,15 @@ import TypeInputs from "@/interfaces/formType";
 import postData from "@/helpers/dataTgPost";
 import formSchema from "@/schemas/formSchema";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { areaOptions } from "@/data/areaOptions";
+import Image from "next/image";
+import { unlockScroll } from "@/helpers/blockScroll";
+import Close from "@/public/x.svg";
 
-const Form: FC<IMakeData> = ({ makes }) => {
+const Form: FC<{ makes: IMakeData; setModalOpen: Function }> = ({
+  makes,
+  setModalOpen,
+}) => {
   const makesRef = useRef<SelectInstance>(null);
   const modelsRef = useRef<SelectInstance>(null);
 
@@ -55,71 +62,103 @@ const Form: FC<IMakeData> = ({ makes }) => {
   }, [brand]);
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
-      <input
-        className={errors.tel && styles.isEmpty}
-        placeholder="Телефон (Обов'язково)"
-        {...register("tel")}
-      />
-      {errors.tel && <p className={styles.error}>{errors.tel.message}</p>}
-      <input
-        className={errors.name && styles.isEmpty}
-        placeholder="Ім'я"
-        {...register("name")}
-      />
-      {errors.name && <p className={styles.error}>{errors.name.message}</p>}
+    <div className={styles.formContainer}>
+      <div>
+        <h3>Онлайн-замовлення евакуатора</h3>
+        <p>Заповніть форму для більш швидкої комунікації с діспечиром.</p>
+      </div>
+      <div
+        onClick={() => {
+          setModalOpen(false);
+          unlockScroll();
+        }}
+        className={styles.closeModal}
+      >
+        <Image alt="close" src={Close} />
+      </div>
 
-      <Controller
-        name="brand"
-        control={control}
-        render={({ field }) => (
-          <Select
-            {...field}
-            noOptionsMessage={() => "Нічого не знайдено"}
-            isClearable
-            classNamePrefix="select"
-            ref={makesRef}
-            onChange={(e) => {
-              onBrandChange(e);
-              field.onChange(e);
-            }}
-            instanceId="makes-select-id"
-            placeholder={"Марка"}
-            options={makes}
-          />
+      <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+        <input
+          className={errors.tel && styles.isEmpty}
+          placeholder="Телефон (Обов'язково)"
+          {...register("tel")}
+        />
+        {errors.tel && <p className={styles.error}>{errors.tel.message}</p>}
+        <input
+          className={errors.name && styles.isEmpty}
+          placeholder="Ім'я"
+          {...register("name")}
+        />
+        {errors.name && <p className={styles.error}>{errors.name.message}</p>}
+
+        <Controller
+          name="brand"
+          control={control}
+          render={({ field }) => (
+            <Select
+              {...field}
+              noOptionsMessage={() => "Нічого не знайдено"}
+              isClearable
+              classNamePrefix="select"
+              ref={makesRef}
+              onChange={(e) => {
+                onBrandChange(e);
+                field.onChange(e);
+              }}
+              instanceId="makes-select-id"
+              placeholder={"Марка"}
+              options={makes.makes}
+            />
+          )}
+        />
+
+        <Controller
+          name="model"
+          control={control}
+          render={({ field }) => (
+            <Select
+              {...field}
+              isClearable
+              classNamePrefix="select"
+              ref={modelsRef}
+              noOptionsMessage={() => "Нічого не знайдено"}
+              instanceId="model-select-id"
+              placeholder={"Модель"}
+              options={modelOptions}
+            />
+          )}
+        />
+
+        <Controller
+          name="area"
+          control={control}
+          render={({ field }) => (
+            <Select
+              {...field}
+              isClearable
+              classNamePrefix="select"
+              noOptionsMessage={() => "Нічого не знайдено"}
+              instanceId="area-select-id"
+              options={areaOptions}
+            />
+          )}
+        />
+        {errors.area?.value?.message && (
+          <p className={styles.error}>{errors.area.value.message}</p>
         )}
-      />
-      {errors.brand && <p className={styles.error}>{errors.brand.message}</p>}
 
-      <Controller
-        name="model"
-        control={control}
-        render={({ field, fieldState: onChange }) => (
-          <Select
-            {...field}
-            isClearable
-            classNamePrefix="select"
-            ref={modelsRef}
-            noOptionsMessage={() => "Нічого не знайдено"}
-            instanceId="model-select-id"
-            placeholder={"Модель"}
-            options={modelOptions}
-          />
+        <input
+          className={errors.comment && styles.isEmpty}
+          placeholder="Коментар"
+          {...register("comment")}
+        />
+        {errors.comment && (
+          <p className={styles.error}>{errors.comment.message}</p>
         )}
-      />
-      {errors.model && <p className={styles.error}>{errors.model.message}</p>}
 
-      <input
-        className={errors.comment && styles.isEmpty}
-        placeholder="Коментар"
-        {...register("comment")}
-      />
-      {errors.comment && (
-        <p className={styles.error}>{errors.comment.message}</p>
-      )}
-
-      <button type="submit">ЗАМОВИТИ</button>
-    </form>
+        <button type="submit">ЗАМОВИТИ</button>
+      </form>
+    </div>
   );
 };
 

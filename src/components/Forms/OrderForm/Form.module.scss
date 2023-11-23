@@ -1,3 +1,13 @@
+@import "../../../app/variables.module.scss";
+
+.formContainer {
+  padding: 48px;
+  background-color: $Background;
+  width: 502px;
+  position: relative;
+  color: $Black;
+}
+
 .form {
   display: flex;
   flex-flow: column;
@@ -42,4 +52,24 @@
 
 .isEmpty {
   border: 2px solid rgb(194, 6, 6) !important;
+}
+
+.closeModal {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  right: 16px;
+  top: 16px;
+
+  border: 1px solid $Background;
+
+  & img {
+    border: 1px solid $Background;
+    border-radius: 50%;
+
+    &:hover {
+      border: 1px solid $Red-1;
+      border-radius: 50%;
+    }
+  }
 }

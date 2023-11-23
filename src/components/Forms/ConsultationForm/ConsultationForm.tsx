@@ -6,8 +6,15 @@ import { TypeConsultationInputs } from "@/interfaces/formType";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { consultationFormSchema } from "@/schemas/formSchema";
 import styles from "./ConsultationFom.module.scss";
+import { FC } from "react";
+import { unlockScroll } from "@/helpers/blockScroll";
+import Image from "next/image";
+import Close from "@/public/x.svg";
+import RedStar from "@/public/redStar.svg";
 
-export const ConsultationForm = () => {
+export const ConsultationForm: FC<{ setModalOpen: Function }> = ({
+  setModalOpen,
+}) => {
   const {
     register,
     handleSubmit,
@@ -18,13 +25,26 @@ export const ConsultationForm = () => {
   });
 
   const onSubmit: SubmitHandler<TypeConsultationInputs> = (data) => {
-    postData(data);
+    const newData = {
+      ...data,
+      comment: "Консультація!!!" + data.comment,
+    };
+    postData(newData);
     reset();
   };
 
   return (
     <div className={styles.formContainer}>
       <h3>Замовити консультацію</h3>
+      <div
+        onClick={() => {
+          setModalOpen(false);
+          unlockScroll();
+        }}
+        className={styles.closeModal}
+      >
+        <Image alt="close" src={Close} />
+      </div>
       <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
         <label htmlFor="name">
           Ваше ім&apos;я<span>*</span>
@@ -36,19 +56,24 @@ export const ConsultationForm = () => {
         />
         {errors.name && <p className={styles.error}>{errors.name.message}</p>}
 
+        <label htmlFor="tel">
+          Телефон<span>*</span>
+        </label>
         <div className={styles.telContainer}>
           <div className={styles.countryCode}>+380</div>
           <input
+            id="tel"
             className={errors.tel && styles.isEmpty}
-            placeholder="Телефон (Обов'язково)"
+            placeholder="00 000 00 00"
             {...register("tel")}
           />
         </div>
         {errors.tel && <p className={styles.error}>{errors.tel.message}</p>}
 
+        <label htmlFor="comment">Коментарі</label>
         <textarea
+          id="comment"
           className={errors.comment && styles.isEmpty}
-          placeholder="Коментар"
           {...register("comment")}
         />
 
@@ -56,7 +81,12 @@ export const ConsultationForm = () => {
           <p className={styles.error}>{errors.comment.message}</p>
         )}
 
-        <button type="submit">ЗАМОВИТИ</button>
+        <div className={styles.requiredMark}>
+          <Image alt="redStar" src={RedStar} />
+          <p className={styles.p}>- обов&apos;язкове для заповнення поле</p>
+        </div>
+
+        <button type="submit">Замовити</button>
       </form>
     </div>
   );

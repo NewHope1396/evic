@@ -1,11 +1,13 @@
 @import "../../../app/variables.module.scss";
 
 .formContainer {
-  flex-direction: column;
   padding: 48px;
   background-color: $Background;
+  width: 502px;
+  position: relative;
 
   & h3 {
+    text-align: center;
     font-size: 32px;
     color: $Red-1;
     font-weight: 700;
@@ -22,17 +24,139 @@
   color: $Black;
 
   & label {
+    margin-bottom: 4px;
+    width: 100%;
+
     & span {
       color: $Red-1;
     }
   }
 
   & input {
-    display: block;
-    width: 100%;
+    padding: 12px 16px;
+    font-size: 16px;
+    line-height: 22.4px;
+    font-family: gilroy;
+    border: none;
+    width: calc(100% - 32px);
+    border: 1px solid #ababab;
+    margin-bottom: 16px;
+
+    &::placeholder {
+      color: $Gray-2;
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    &.isEmpty {
+      border: 2px solid $Error;
+    }
+
+    &:hover,
+    &:focus {
+      outline: none;
+    }
+  }
+
+  & textarea {
+    width: calc(100% - 32px);
+    font-family: gilroy;
+    line-height: 22.4px;
+    height: 96px;
+    padding: 14px 16px;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 16px;
+    border: 1px solid #ababab;
+
+    &::placeholder {
+      color: $Gray-2;
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    &:hover,
+    &:focus {
+      outline: none;
+    }
+
+    min-width: calc(100% - 32px);
+    max-width: calc(100% - 32px);
+    max-height: 400px;
+    min-height: 96px;
+  }
+
+  & button {
+    padding: 16px 32px;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 20px;
+    color: $White;
+    background-color: $Gray;
+    border: 2px solid #ababab;
   }
 }
 
 .telContainer {
   width: 100%;
+  display: flex;
+  align-items: center;
+
+  .countryCode {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22.4px;
+    background-color: $White;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    margin-right: 8px;
+    border: 1px solid $Black;
+  }
+}
+
+.closeModal {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  right: 16px;
+  top: 16px;
+
+  border: 1px solid $Background;
+
+  & img {
+    border: 1px solid $Background;
+    border-radius: 50%;
+
+    &:hover {
+      border: 1px solid $Red-1;
+      border-radius: 50%;
+    }
+  }
+}
+
+.requiredMark {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 8px;
+  margin-bottom: 48px;
+
+  & img {
+    margin-top: 1px;
+  }
+
+  & .p {
+    margin-bottom: 0px;
+    margin-left: 8px;
+  }
+}
+
+.error {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16.8px;
+  margin-top: -12px;
+  width: 100%;
+  color: $Error;
 }

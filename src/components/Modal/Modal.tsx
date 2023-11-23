@@ -11,16 +11,14 @@ export const Modal: FC<{
   setModalOpen: Function;
 }> = ({ makes, option, setModalOpen }) => {
   return (
-    <div
-      onClick={() => {
-        setModalOpen(false);
-        unlockScroll();
-      }}
-      className={styles.overlay}
-    >
-      <div onClick={(e) => e.stopPropagation()}>
-        {option === "order" && <Form makes={makes.makes} />}
-        {option === "consultation" && <ConsultationForm />}
+    <div className={styles.overlay}>
+      <div>
+        {option === "order" && (
+          <Form setModalOpen={setModalOpen} makes={makes} />
+        )}
+        {option === "consultation" && (
+          <ConsultationForm setModalOpen={setModalOpen} />
+        )}
       </div>
     </div>
   );
