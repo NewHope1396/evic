@@ -63,9 +63,9 @@ const Form: FC<{ makes: IMakeData; setModalOpen: Function }> = ({
 
   return (
     <div className={styles.formContainer}>
-      <div>
+      <div className={styles.hat}>
         <h3>Онлайн-замовлення евакуатора</h3>
-        <p>Заповніть форму для більш швидкої комунікації с діспечиром.</p>
+        <p>Заповніть форму для більш швидкої комунікації з диспетчером.</p>
       </div>
       <div
         onClick={() => {
@@ -78,56 +78,71 @@ const Form: FC<{ makes: IMakeData; setModalOpen: Function }> = ({
       </div>
 
       <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+        <label htmlFor="name">
+          Ваше ім&apos;я<span>*</span>
+        </label>
         <input
-          className={errors.tel && styles.isEmpty}
-          placeholder="Телефон (Обов'язково)"
-          {...register("tel")}
-        />
-        {errors.tel && <p className={styles.error}>{errors.tel.message}</p>}
-        <input
+          id="name"
           className={errors.name && styles.isEmpty}
-          placeholder="Ім'я"
           {...register("name")}
         />
         {errors.name && <p className={styles.error}>{errors.name.message}</p>}
 
-        <Controller
-          name="brand"
-          control={control}
-          render={({ field }) => (
-            <Select
-              {...field}
-              noOptionsMessage={() => "Нічого не знайдено"}
-              isClearable
-              classNamePrefix="select"
-              ref={makesRef}
-              onChange={(e) => {
-                onBrandChange(e);
-                field.onChange(e);
-              }}
-              instanceId="makes-select-id"
-              placeholder={"Марка"}
-              options={makes.makes}
-            />
-          )}
-        />
+        <label htmlFor="tel">
+          Телефон<span>*</span>
+        </label>
+        <div className={styles.telContainer}>
+          <div className={styles.countryCode}>+380</div>
+          <input
+            id="tel"
+            className={errors.tel && styles.isEmpty}
+            placeholder="00 000 00 00"
+            {...register("tel")}
+          />
+        </div>
+        {errors.tel && <p className={styles.error}>{errors.tel.message}</p>}
 
-        <Controller
-          name="model"
-          control={control}
-          render={({ field }) => (
-            <Select
-              {...field}
-              isClearable
-              classNamePrefix="select"
-              ref={modelsRef}
-              noOptionsMessage={() => "Нічого не знайдено"}
-              instanceId="model-select-id"
-              placeholder={"Модель"}
-              options={modelOptions}
-            />
-          )}
-        />
+        <div className={styles.selectsContainer}>
+          <Controller
+            name="brand"
+            control={control}
+            render={({ field }) => (
+              <Select
+                {...field}
+                noOptionsMessage={() => "Нічого не знайдено"}
+                isClearable
+                className="select"
+                classNamePrefix="select"
+                ref={makesRef}
+                onChange={(e) => {
+                  onBrandChange(e);
+                  field.onChange(e);
+                }}
+                instanceId="makes-select-id"
+                placeholder={"Марка"}
+                options={makes.makes}
+              />
+            )}
+          />
+
+          <Controller
+            name="model"
+            control={control}
+            render={({ field }) => (
+              <Select
+                {...field}
+                isClearable
+                className="select"
+                classNamePrefix="select"
+                ref={modelsRef}
+                noOptionsMessage={() => "Нічого не знайдено"}
+                instanceId="model-select-id"
+                placeholder={"Модель"}
+                options={modelOptions}
+              />
+            )}
+          />
+        </div>
 
         <Controller
           name="area"
@@ -135,7 +150,7 @@ const Form: FC<{ makes: IMakeData; setModalOpen: Function }> = ({
           render={({ field }) => (
             <Select
               {...field}
-              isClearable
+              className="areaSelect"
               classNamePrefix="select"
               noOptionsMessage={() => "Нічого не знайдено"}
               instanceId="area-select-id"
@@ -147,7 +162,7 @@ const Form: FC<{ makes: IMakeData; setModalOpen: Function }> = ({
           <p className={styles.error}>{errors.area.value.message}</p>
         )}
 
-        <input
+        <textarea
           className={errors.comment && styles.isEmpty}
           placeholder="Коментар"
           {...register("comment")}
@@ -156,7 +171,7 @@ const Form: FC<{ makes: IMakeData; setModalOpen: Function }> = ({
           <p className={styles.error}>{errors.comment.message}</p>
         )}
 
-        <button type="submit">ЗАМОВИТИ</button>
+        <button type="submit">Замовити евакуатор</button>
       </form>
     </div>
   );

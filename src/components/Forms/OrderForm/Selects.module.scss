@@ -1,4 +1,7 @@
-.select {
+@import "../../../app/variables.module.scss";
+
+.select,
+.areaSelect {
   &__control,
   &__value-container,
   &__input-container,
@@ -7,23 +10,54 @@
     margin: 0 !important;
   }
 
+  width: calc(50% - 8px);
+
   &__control {
-    background-color: fff !important;
+    font-weight: 400;
     margin-bottom: 10px !important;
+    width: 100%;
     border: none !important;
+    border-radius: 0 !important;
     outline: none !important;
-    border-radius: 5px !important;
     text-align: start;
     padding: 8px !important;
     font-size: 14px;
+    border: 1px solid #ababab !important;
+
+    &--menu-is-open,
+    &--is-focused {
+      border: 1px solid #ababab !important;
+      box-shadow: none !important;
+    }
 
     &:hover,
     &:focus {
-      background-color: #cfcfcf;
-    }
-
-    &--menu-is-open {
-      background-color: #76a2ff !important;
+      box-shadow: 0px 0px 6px 0px #0000001a !important;
+      transition: 200ms ease-in-out;
     }
   }
+
+  &__option {
+    &--is-focused {
+      background-color: $Red-2L !important;
+      color: $White !important;
+      transition: 200ms ease-in-out;
+    }
+
+    &--is-selected {
+      background-color: $Red-3 !important;
+      transition: 200ms ease-in-out;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $Red-1 !important;
+      color: $White;
+      transition: 200ms ease-in-out;
+    }
+  }
+}
+
+.areaSelect {
+  width: 100%;
 }

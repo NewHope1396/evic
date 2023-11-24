@@ -3,43 +3,108 @@
 .formContainer {
   padding: 48px;
   background-color: $Background;
-  width: 502px;
+  width: 503px;
   position: relative;
   color: $Black;
+
+  & .hat {
+    margin-bottom: 48px;
+
+    & h3 {
+      text-align: center;
+      font-size: 32px;
+      color: $Red-1;
+      font-weight: 700;
+      line-height: 35.2px;
+      margin-bottom: 8px;
+    }
+
+    & p {
+      font-size: 16px;
+      line-height: 22.4px;
+      font-weight: 400;
+      text-align: center;
+    }
+  }
 }
 
 .form {
   display: flex;
-  flex-flow: column;
-  width: 350px;
-  margin: 0 auto;
-  border: 1px solid #cfcfcf;
-  border-radius: 8px;
-  padding: 30px 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  & label {
+    margin-bottom: 4px;
+    width: 100%;
+
+    & span {
+      color: $Red-1;
+    }
+  }
+
+  .telContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    .countryCode {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 22.4px;
+      background-color: $White;
+      padding: 12px 16px;
+      margin-bottom: 16px;
+      margin-right: 8px;
+      border: 1px solid $Black;
+    }
+  }
 
   & input,
-  & button {
-    margin-bottom: 10px;
+  & textarea {
+    padding: 12px 16px;
+    font-size: 16px;
+    line-height: 22.4px;
+    font-family: gilroy;
     border: none;
-    outline: none;
-    border-radius: 5px;
-    padding: 10px;
+    width: calc(100% - 32px);
+    border: 1px solid #ababab;
+    margin-bottom: 16px;
+
+    &::placeholder {
+      color: $Gray-2;
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    &.isEmpty {
+      border: 2px solid $Error;
+    }
 
     &:hover,
     &:focus {
       outline: none;
-      border: none;
-      background-color: #cfcfcf;
+      box-shadow: 0px 0px 6px 0px #0000001a;
     }
   }
 
-  & button {
-    margin-top: 50px;
+  & textarea {
+    min-width: calc(100% - 32px);
+    max-width: calc(100% - 32px);
+    max-height: 400px;
+    min-height: 96px;
+    margin-bottom: 48px;
+  }
 
-    &:hover,
-    &:focus {
-      background-color: #76a2ff;
-    }
+  & button {
+    padding: 16px 32px;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 20px;
+    color: $White;
+    background-color: $Gray;
+    border: 2px solid #ababab;
   }
 }
 
@@ -72,4 +137,19 @@
       border-radius: 50%;
     }
   }
+}
+
+.error {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16.8px;
+  margin-top: -12px;
+  width: 100%;
+  color: $Error;
+}
+
+.selectsContainer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
