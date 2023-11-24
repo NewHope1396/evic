@@ -1,7 +1,7 @@
-import TypeInputs, { TypeConsultationInputs } from "@/interfaces/formType"
+import { TypeConsultationPost, TypeOrderPost } from "@/interfaces/formType"
 import axios from "axios";
 
-const postData = async (data: TypeInputs | TypeConsultationInputs) => {
+const postData = async (data: TypeConsultationPost | TypeOrderPost) => {
   try {
     const result = await axios.post("https://tg-evic-bot.onrender.com/sendData", data)
     console.log(result)

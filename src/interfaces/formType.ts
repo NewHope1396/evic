@@ -15,5 +15,10 @@ export type TypeConsultationInputs = {
   comment?: string | undefined;
 
 }
+
+export type TypeOrderPost = TypeInputs & { type: string }
+
+export type TypeConsultationPost = TypeConsultationInputs & { type: string}
+ 
   
 export default TypeInputs;

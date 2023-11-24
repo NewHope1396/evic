@@ -37,7 +37,7 @@ const Form: FC<{ makes: IMakeData; setModalOpen: Function }> = ({
   } = useForm<TypeInputs>({ resolver: yupResolver(formSchema) });
 
   const onSubmit: SubmitHandler<TypeInputs> = (data) => {
-    postData(data);
+    postData({ ...data, type: "order" });
     resetSelects();
     reset();
   };

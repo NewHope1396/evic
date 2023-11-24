@@ -25,11 +25,7 @@ export const ConsultationForm: FC<{ setModalOpen: Function }> = ({
   });
 
   const onSubmit: SubmitHandler<TypeConsultationInputs> = (data) => {
-    const newData = {
-      ...data,
-      comment: "Консультація!!!" + data.comment,
-    };
-    postData(newData);
+    postData({ ...data, type: "consultation" });
     reset();
   };
 
