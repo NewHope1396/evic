@@ -15,6 +15,7 @@ import { areaOptions } from "@/data/areaOptions";
 import Image from "next/image";
 import { unlockScroll } from "@/helpers/blockScroll";
 import Close from "@/public/x.svg";
+import RedStar from "@/public/redStar.svg";
 
 const Form: FC<{ makes: IMakeData; setModalOpen: Function }> = ({
   makes,
@@ -103,73 +104,94 @@ const Form: FC<{ makes: IMakeData; setModalOpen: Function }> = ({
         {errors.tel && <p className={styles.error}>{errors.tel.message}</p>}
 
         <div className={styles.selectsContainer}>
-          <Controller
-            name="brand"
-            control={control}
-            render={({ field }) => (
-              <Select
-                {...field}
-                noOptionsMessage={() => "Нічого не знайдено"}
-                isClearable
-                className="select"
-                classNamePrefix="select"
-                ref={makesRef}
-                onChange={(e) => {
-                  onBrandChange(e);
-                  field.onChange(e);
-                }}
-                instanceId="makes-select-id"
-                placeholder={"Марка"}
-                options={makes.makes}
-              />
-            )}
-          />
+          <div className={styles.selectWrap}>
+            <label htmlFor="brand">Марка</label>
+            <Controller
+              name="brand"
+              control={control}
+              render={({ field }) => (
+                <Select
+                  {...field}
+                  id="brand"
+                  noOptionsMessage={() => "Нічого не знайдено"}
+                  isClearable
+                  placeholder={""}
+                  className="select"
+                  classNamePrefix="select"
+                  ref={makesRef}
+                  onChange={(e) => {
+                    onBrandChange(e);
+                    field.onChange(e);
+                  }}
+                  instanceId="makes-select-id"
+                  options={makes.makes}
+                />
+              )}
+            />
+          </div>
 
+          <div className={styles.selectWrap}>
+            <label htmlFor="model">Модель</label>
+            <Controller
+              name="model"
+              control={control}
+              render={({ field }) => (
+                <Select
+                  {...field}
+                  id="model"
+                  isClearable
+                  className="select"
+                  classNamePrefix="select"
+                  ref={modelsRef}
+                  noOptionsMessage={() => "Нічого не знайдено"}
+                  instanceId="model-select-id"
+                  placeholder={""}
+                  options={modelOptions}
+                />
+              )}
+            />
+          </div>
+        </div>
+
+        <div className={styles.areaContainer}>
+          <label htmlFor="area">
+            Область<span>*</span>
+          </label>
           <Controller
-            name="model"
+            name="area"
             control={control}
             render={({ field }) => (
               <Select
                 {...field}
-                isClearable
-                className="select"
+                id="area"
+                placeholder={""}
+                className="areaSelect"
                 classNamePrefix="select"
-                ref={modelsRef}
                 noOptionsMessage={() => "Нічого не знайдено"}
-                instanceId="model-select-id"
-                placeholder={"Модель"}
-                options={modelOptions}
+                instanceId="area-select-id"
+                options={areaOptions}
               />
             )}
           />
         </div>
-
-        <Controller
-          name="area"
-          control={control}
-          render={({ field }) => (
-            <Select
-              {...field}
-              className="areaSelect"
-              classNamePrefix="select"
-              noOptionsMessage={() => "Нічого не знайдено"}
-              instanceId="area-select-id"
-              options={areaOptions}
-            />
-          )}
-        />
         {errors.area?.value?.message && (
           <p className={styles.error}>{errors.area.value.message}</p>
         )}
 
+        <label htmlFor="comment">Комментар</label>
         <textarea
+          id="comment"
           className={errors.comment && styles.isEmpty}
-          placeholder="Коментар"
           {...register("comment")}
         />
         {errors.comment && (
           <p className={styles.error}>{errors.comment.message}</p>
         )}
+
+        <div className={styles.requiredMark}>
+          <Image alt="redStar" src={RedStar} />
+          <p className={styles.p}>- обов&apos;язкове для заповнення поле</p>
+        </div>
 
         <button type="submit">Замовити евакуатор</button>
       </form>
