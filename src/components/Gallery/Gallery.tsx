@@ -3,6 +3,9 @@
 import styles from "./Gallery.module.scss";
 import Container from "../Container/Container";
 import { useState } from "react";
+import Image from "next/image";
+import Left from "@/public/left.svg";
+import Right from "@/public/right.svg";
 
 export const Gallery = () => {
   const [position, setPosition] = useState(1);
@@ -13,7 +16,7 @@ export const Gallery = () => {
         <div className={styles.galleryContainer}>
           <h2 className={styles.title}>Галерея робіт</h2>
 
-          <div className={styles.galCont}>
+          <div className={styles.sliderCover}>
             <button
               className={styles.leftBtn}
               onClick={() => {
@@ -22,28 +25,40 @@ export const Gallery = () => {
                 }
               }}
             >
-              Влево
+              <Image alt="arrow left" src={Left} />
             </button>
-            <div
-              className={`${styles.slider}
-          ${position === 1 && styles.firstPosition}
-          ${position === 2 && styles.secondPosition}
-          ${position === 3 && styles.thirdPosition}`}
-            >
+
+            <div className={styles.sliderContainer}>
               <div
-                className={styles.galItem}
-                style={{ backgroundColor: "red" }}
+                className={`${styles.slider}
+                ${position === 1 && styles.firstPosition}
+                ${position === 2 && styles.secondPosition}
+                ${position === 3 && styles.thirdPosition}`}
               >
-                <p>Здрасьте</p>
-              </div>
-              <div className={styles.galItem}>
-                <p>Здрасьте</p>
-              </div>
-              <div
-                className={styles.galItem}
-                style={{ backgroundColor: "green" }}
-              >
-                <p>Здрасьте</p>
+                <div className={styles.galItem}>
+                  <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+                <div className={styles.galItem}>
+                  <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+                <div className={styles.galItem}>
+                  <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
               </div>
             </div>
             <button
@@ -54,7 +69,7 @@ export const Gallery = () => {
                 }
               }}
             >
-              Вправо
+              <Image alt="arrow right" src={Right} />
             </button>
           </div>
           <ul className={styles.sliderNav}>
