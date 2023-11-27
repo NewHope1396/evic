@@ -5,7 +5,7 @@ import About from "@/components/About/About";
 import carFetchers from "@/helpers/carFetchers";
 import Stages from "@/components/Stages/Stages";
 import { Header } from "@/components/Header/Header";
-import Container from "@/components/Container/Container";
+import { Gallery } from "@/components/Gallery/Gallery";
 
 export default async function App() {
   const makes = await carFetchers.getMakes();
@@ -18,6 +18,7 @@ export default async function App() {
       <Prices />
       <About />
       <Stages />
+      <Gallery />
     </main>
   );
 }

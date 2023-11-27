@@ -1,11 +1,11 @@
 @import "../../app/variables.module.scss";
 
 .advantages {
-  padding: 40px 80px;
   background-color: $Background;
 
   ul {
     display: flex;
+    padding: 40px 80px;
 
     & li {
       background-color: $White;

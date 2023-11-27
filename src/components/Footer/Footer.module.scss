@@ -1,11 +1,13 @@
 @import "../../app/variables.module.scss";
 
 .footer {
-  padding: 24px 200px;
-  text-align: center;
-
   color: $White;
   background-color: $Black;
+}
+
+.footerContainer {
+  padding: 24px 80px;
+  text-align: center;
 
   & div {
     display: flex;

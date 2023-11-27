@@ -1,0 +1,78 @@
+@import "../../app/variables.module.scss";
+
+.gallerySection {
+  background-color: $Background;
+}
+
+.galleryContainer {
+  padding: 80px;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 53px;
+  margin-bottom: 64px;
+}
+
+.galCont {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+
+  & button {
+    position: absolute;
+    top: calc(50% - 10px);
+    display: block;
+
+    &.leftBtn {
+      left: 0;
+      z-index: 1;
+    }
+
+    &.rightBtn {
+      right: 0;
+      z-index: 1;
+    }
+  }
+}
+
+.slider {
+  display: flex;
+  transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.firstPosition {
+  transform: translateX(0%);
+}
+
+.secondPosition {
+  transform: translateX(-100%);
+}
+
+.thirdPosition {
+  transform: translateX(-200%);
+}
+
+.galItem {
+  width: 100%;
+  flex-shrink: 0;
+  margin: 0 auto;
+  height: 150px;
+  background-color: $Gray-2;
+}
+
+.sliderNav {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+
+  & button {
+    background-color: $Gray-2;
+    transition: background-color 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &.activeBtn {
+      background-color: $Red-1;
+    }
+  }
+}
