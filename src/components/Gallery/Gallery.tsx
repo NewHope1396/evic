@@ -6,12 +6,15 @@ import { useState } from "react";
 import Image from "next/image";
 import Left from "@/public/left.svg";
 import Right from "@/public/right.svg";
+import galleryPhotos from "@/public/GalleryPhotos/galleryPhotos";
+import Insta from "@/public/instagram.svg";
+import Link from "next/link";
 
 export const Gallery = () => {
   const [position, setPosition] = useState(1);
 
   return (
-    <section className={styles.gallerySection}>
+    <section id="gallery" className={styles.gallerySection}>
       <Container>
         <div className={styles.galleryContainer}>
           <h2 className={styles.title}>Галерея робіт</h2>
@@ -37,26 +40,86 @@ export const Gallery = () => {
               >
                 <div className={styles.galItem}>
                   <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <li>
+                      <Image
+                        alt="evic work example photo"
+                        src={galleryPhotos.Photo1}
+                      />
+                    </li>
+                    <li>
+                      <Image
+                        alt="evic work example photo"
+                        src={galleryPhotos.Photo2}
+                      />
+                    </li>
+                    <li>
+                      <Image
+                        alt="evic work example photo"
+                        src={galleryPhotos.Photo3}
+                      />
+                    </li>
+                    <li>
+                      <Image
+                        alt="evic work example photo"
+                        src={galleryPhotos.Photo4}
+                      />
+                    </li>
                   </ul>
                 </div>
                 <div className={styles.galItem}>
                   <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <li>
+                      <Image
+                        alt="evic work example photo"
+                        src={galleryPhotos.Photo5}
+                      />
+                    </li>
+                    <li>
+                      <Image
+                        alt="evic work example photo"
+                        src={galleryPhotos.Photo6}
+                      />
+                    </li>
+                    <li>
+                      <Image
+                        alt="evic work example photo"
+                        src={galleryPhotos.Photo7}
+                      />
+                    </li>
+                    <li>
+                      <Image
+                        alt="evic work example photo"
+                        src={galleryPhotos.Photo8}
+                      />
+                    </li>
                   </ul>
                 </div>
                 <div className={styles.galItem}>
                   <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <li>
+                      <Image
+                        alt="evic work example photo"
+                        src={galleryPhotos.Photo1}
+                      />
+                    </li>
+                    <li>
+                      <Image
+                        alt="evic work example photo"
+                        src={galleryPhotos.Photo3}
+                      />
+                    </li>
+                    <li>
+                      <Image
+                        alt="evic work example photo"
+                        src={galleryPhotos.Photo5}
+                      />
+                    </li>
+                    <li>
+                      <Image
+                        alt="evic work example photo"
+                        src={galleryPhotos.Photo7}
+                      />
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -79,9 +142,7 @@ export const Gallery = () => {
                 onClick={() => {
                   setPosition(1);
                 }}
-              >
-                1
-              </button>
+              ></button>
             </li>
             <li>
               <button
@@ -89,9 +150,7 @@ export const Gallery = () => {
                 onClick={() => {
                   setPosition(2);
                 }}
-              >
-                2
-              </button>
+              ></button>
             </li>
             <li>
               <button
@@ -99,11 +158,16 @@ export const Gallery = () => {
                 onClick={() => {
                   setPosition(3);
                 }}
-              >
-                3
-              </button>
+              ></button>
             </li>
           </ul>
+
+          <div className={styles.morePhotos}>
+            <p>Більше фото:</p>
+            <Link href={""} className={styles.imgContainer}>
+              <Image alt="instagram icon" src={Insta} />
+            </Link>
+          </div>
         </div>
       </Container>
     </section>

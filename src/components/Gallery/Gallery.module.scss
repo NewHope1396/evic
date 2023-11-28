@@ -6,7 +6,6 @@
 
 .galleryContainer {
   padding: 80px;
-  position: relative;
 }
 
 .title {
@@ -64,6 +63,11 @@
       &:not(:last-child) {
         margin-right: 16px;
       }
+
+      & img {
+        max-width: 100%;
+        max-height: 100%;
+      }
     }
   }
 }
@@ -72,13 +76,25 @@
   display: flex;
   width: 100%;
   justify-content: center;
+  margin-bottom: 32px;
 
-  & button {
-    background-color: $Gray-2;
-    transition: background-color 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  & li {
+    &:not(:last-child) {
+      margin-right: 8px;
+    }
 
-    &.activeBtn {
-      background-color: $Red-1;
+    & button {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: none;
+      background-color: $Gray;
+      transition: background-color 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+
+      &.activeBtn {
+        background-color: $Red-1;
+      }
     }
   }
 }
@@ -94,6 +110,7 @@
   border: none;
   border-radius: 50%;
   transition: background-color 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
 
   &:hover {
     background-color: $Red-2L;
@@ -110,4 +127,35 @@
   margin-left: 16px;
   right: 0;
   z-index: 1;
+}
+
+.morePhotos {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+
+  & p {
+    margin-right: 16px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: 0em;
+  }
+
+  & .imgContainer {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+    background-color: $Red-1;
+
+    & img {
+      width: 24px;
+      height: 24px;
+    }
+  }
 }
