@@ -7,11 +7,9 @@
   cursor: pointer;
   color: $Black;
 
+  transition: $Color-anim;
+
   &:hover {
     color: $Red-1 !important;
   }
-}
-
-.footerLogo {
-  color: $White;
 }

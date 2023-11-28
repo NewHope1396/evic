@@ -1,4 +1,7 @@
+"use client";
+
 import styles from "./Footer.module.scss";
+import { Link as ReactScrollLink } from "react-scroll";
 import Link from "next/link";
 import Image from "next/image";
 import Telegram from "@/public/Telegram.svg";
@@ -16,19 +19,29 @@ export default function Footer() {
             <nav>
               <ul>
                 <li>
-                  <Link href={"#prices"}>Послуги та ціни</Link>
+                  <ReactScrollLink to="prices" spy={true} offset={-300}>
+                    Послуги та ціни
+                  </ReactScrollLink>
                 </li>
                 <li>
-                  <Link href={"#about"}>Про нас</Link>
+                  <ReactScrollLink to="about" spy={true} offset={-300}>
+                    Про нас
+                  </ReactScrollLink>
                 </li>
                 <li>
-                  <Link href={"#stages"}>Етапи роботи</Link>
+                  <ReactScrollLink to="stages" spy={true} offset={-300}>
+                    Етапи роботи
+                  </ReactScrollLink>
                 </li>
                 <li>
-                  <Link href={"#gallery"}>Галерея</Link>
+                  <ReactScrollLink to="gallery" spy={true} offset={-300}>
+                    Галерея
+                  </ReactScrollLink>
                 </li>
                 <li>
-                  <Link href={"#feedback"}>Відгуки</Link>
+                  <ReactScrollLink to="feedbacks" spy={true} offset={-660}>
+                    Відгуки
+                  </ReactScrollLink>
                 </li>
               </ul>
             </nav>

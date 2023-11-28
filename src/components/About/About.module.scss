@@ -85,6 +85,12 @@
         background-color: $Red-1;
         border-radius: 50%;
 
+        transition: $BGC-anim;
+
+        &:hover {
+          background-color: $Red-2L;
+        }
+
         &:not(:last-child) {
           margin-right: 24px;
         }

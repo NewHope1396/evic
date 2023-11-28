@@ -26,6 +26,7 @@
 
         & li {
           padding: 12px 8px;
+          cursor: pointer;
 
           &:not(:last-child) {
             margin-right: 16px;
@@ -47,6 +48,12 @@
         align-items: center;
         width: 48px;
         height: 48px;
+
+        transition: $BGC-anim;
+
+        &:hover {
+          background-color: $Red-2L;
+        }
 
         background-color: $Red-1;
         border-radius: 50%;

@@ -8,6 +8,8 @@
   cursor: pointer;
   line-height: 20px;
 
+  transition: $BGC-anim, $Border-anim;
+
   &:hover,
   &:focus {
     border: 2px solid $Red-2L;

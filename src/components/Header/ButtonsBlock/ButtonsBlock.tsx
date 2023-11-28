@@ -33,17 +33,18 @@ export const ButtonsBlock: FC<{
     <div
       className={`${styles.telContainer} ${!isHidden && styles.showButtons}`}
     >
-      <div className={styles.svgContainer}>
-        <Image
-          priority
-          src={Tel}
-          alt="Phone button icon"
-          width={18}
-          height={18}
-        ></Image>
-      </div>
       <Link className={styles.telLink} href="tel:+380993290551">
-        +380993290551
+        <div className={styles.svgContainer}>
+          <Image
+            priority
+            src={Tel}
+            alt="Phone button icon"
+            width={18}
+            height={18}
+          ></Image>
+        </div>
+
+        <p>+380993290551</p>
       </Link>
       <div className={styles.btnContainer}>
         <ConsultationBtn

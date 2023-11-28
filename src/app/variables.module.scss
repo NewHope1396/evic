@@ -8,13 +8,7 @@ $Black: #21272a;
 $Error: #f80808;
 $Gray-2: #545151;
 
-:export {
-  red1: $Red-1;
-  red2: $Red-2L;
-  red3: $Red-3;
-  white1: $White;
-  bg: $Background;
-  gray1: $Gray;
-  black1: $Black;
-  err: $Error;
-}
+$BGC-anim: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+$Color-anim: color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+$Border-anim: border 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+$Transf-anim: transform 1s cubic-bezier(0.4, 0, 0.2, 1);

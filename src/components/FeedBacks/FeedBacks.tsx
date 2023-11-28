@@ -11,7 +11,7 @@ export const FeedBacks = () => {
   const [position, setPosition] = useState(1);
 
   return (
-    <section>
+    <section id="feedbacks">
       <Container>
         <div className={styles.feedbacksContainer}>
           <div className={styles.sliderCover}>

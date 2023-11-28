@@ -23,7 +23,7 @@ const Nav = () => {
           </Link>
         </li>
         <li>
-          <Link id="navLink" to="feedback" spy={true} offset={-300}>
+          <Link id="navLink" to="feedbacks" spy={true} offset={-660}>
             Відгуки
           </Link>
         </li>

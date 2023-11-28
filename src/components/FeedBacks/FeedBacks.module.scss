@@ -14,14 +14,14 @@
 .sliderContainer {
   position: relative;
   overflow: hidden;
-  width: 836px;
+  width: 820px;
 
-  margin-left: 16px;
+  margin: 16px;
 }
 
 .slider {
   display: flex;
-  transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: $Transf-anim;
 }
 
 .firstPosition {
@@ -29,19 +29,19 @@
 }
 
 .secondPosition {
-  transform: translateX(-100%);
+  transform: translateX(calc(-100% - 16px));
 }
 
 .thirdPosition {
-  transform: translateX(-200%);
+  transform: translateX(calc(-200% - 32px));
 }
 
 .forthPosition {
-  transform: translateX(-300%);
+  transform: translateX(calc(-300% - 48px));
 }
 
 .fifthPosition {
-  transform: translateX(-400%);
+  transform: translateX(calc(-400% - 64px));
 }
 
 .galItem {
@@ -83,7 +83,7 @@
   height: 24px;
   border: none;
   border-radius: 50%;
-  transition: background-color 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: $BGC-anim;
   cursor: pointer;
 
   &:hover {
@@ -107,7 +107,7 @@
       border-radius: 50%;
       border: none;
       background-color: $Gray;
-      transition: background-color 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: $BGC-anim;
       cursor: pointer;
 
       &.activeBtn {
