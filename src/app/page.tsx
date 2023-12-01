@@ -7,6 +7,7 @@ import Stages from "@/components/Stages/Stages";
 import { Header } from "@/components/Header/Header";
 import { Gallery } from "@/components/Gallery/Gallery";
 import { FeedBacks } from "@/components/FeedBacks/FeedBacks";
+import { SwiperGallery } from "@/components/SwiperGallery/SwiperGallery";
 
 export default async function App() {
   const makes = await carFetchers.getMakes();
@@ -21,6 +22,7 @@ export default async function App() {
       <Stages />
       <Gallery />
       <FeedBacks />
+      <SwiperGallery />
     </main>
   );
 }

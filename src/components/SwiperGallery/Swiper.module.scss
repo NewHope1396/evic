@@ -1,0 +1,51 @@
+@import "../../app/variables.module.scss";
+
+.swiper-button-next,
+.swiper-button-prev {
+  display: block;
+  width: 24px !important;
+  height: 24px !important;
+  background-color: $Background;
+  border-radius: 50% !important;
+  cursor: pointer !important;
+  transition: $BGC-anim;
+  top: 166px !important;
+
+  &:hover {
+    background-color: $Red-2L !important;
+  }
+
+  &::after {
+    content: "" !important;
+  }
+}
+
+.swiper {
+  padding-bottom: 76px !important;
+}
+
+.swiper-button-next {
+  right: 0 !important;
+  background-image: url("../../public/right.svg") !important;
+}
+
+.swiper-button-prev {
+  left: 0 !important;
+  background-image: url("../../public/left.svg");
+}
+
+.swiper-pagination {
+  bottom: 0 !important;
+}
+
+.swiper-pagination-bullet {
+  width: 12px !important;
+  height: 12px !important;
+  background-color: $Gray !important;
+  opacity: 1 !important;
+  transition: $BGC-anim !important;
+
+  &-active {
+    background-color: $Red-1 !important;
+  }
+}

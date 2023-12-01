@@ -52,3 +52,7 @@ button {
 }
 
 @import "../components/Forms/OrderForm/Selects.module.scss";
+@import "../components/SwiperGallery/Swiper.module.scss";
+@import "swiper/scss";
+@import "swiper/scss/navigation";
+@import "swiper/scss/pagination";

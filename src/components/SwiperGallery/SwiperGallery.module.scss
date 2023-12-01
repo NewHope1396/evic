@@ -1,0 +1,98 @@
+@import "../../app/variables.module.scss";
+
+.swiperSection {
+  background-color: $Background;
+}
+
+.swiperContainer {
+  padding: 80px;
+
+  & h2 {
+    font-size: 48px;
+    margin-bottom: 64px;
+  }
+}
+
+.desktopSwiper {
+  width: 100%;
+  background-color: $Background;
+  margin-bottom: 32px;
+
+  @media (max-width: 1280px) {
+    display: none;
+  }
+}
+
+.tabletSwiper {
+  @media (min-width: 768px) and (max-width: 1280px) {
+    display: block;
+  }
+
+  display: none;
+}
+
+.mobileSwiper {
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.swiperItem {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & ul {
+    width: calc(100% - 80px);
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    & li {
+      width: calc((100% - 48px) / 4);
+
+      & img {
+        width: 100%;
+
+        height: 100%;
+      }
+    }
+  }
+}
+
+.morePhotos {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+
+  & p {
+    margin-right: 16px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: 0em;
+  }
+
+  & .imgContainer {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+    background-color: $Red-1;
+
+    transition: $BGC-anim;
+
+    &:hover {
+      background-color: $Red-2L;
+    }
+
+    & img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}

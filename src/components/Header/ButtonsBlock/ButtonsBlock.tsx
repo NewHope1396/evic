@@ -8,6 +8,8 @@ import Tel from "@/public/tel.svg";
 import Link from "next/link";
 import { ConsultationBtn } from "./Buttons/ConsultationBtn";
 import { OrderBtn } from "./Buttons/OrderBtn";
+import Menu from "@/public/menu.svg";
+import { Button } from "react-scroll";
 
 export const ButtonsBlock: FC<{
   setIsOrderModalOpen: Function;
@@ -46,6 +48,9 @@ export const ButtonsBlock: FC<{
 
         <p>+380993290551</p>
       </Link>
+      <button className={styles.menu}>
+        <Image alt="menu icon" src={Menu} />
+      </button>
       <div className={styles.btnContainer}>
         <ConsultationBtn
           setIsConsultationModalOpen={setIsConsultationModalOpen}

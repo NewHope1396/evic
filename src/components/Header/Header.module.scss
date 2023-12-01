@@ -12,6 +12,11 @@
 .upperHeader {
   text-align: start;
   padding: 24px 80px;
+
+  @media (max-width: 1280px) {
+    padding: 24px 32px;
+  }
+
   position: relative;
   overflow: hidden;
 

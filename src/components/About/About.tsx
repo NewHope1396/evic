@@ -11,7 +11,7 @@ const About = () => {
     <section id="about" className={styles.section}>
       <Container>
         <div className={styles.about}>
-          <div>
+          <div className={styles.desktopImg}>
             <Image alt="map image" src={Map} />
           </div>
           <div className={styles.textContainer}>
@@ -29,6 +29,9 @@ const About = () => {
               забезпечити його безпечну евакуацію до необхідного пункту
               призначення.
             </p>
+            <div className={styles.tabletImg}>
+              <Image alt="map image" src={Map} />
+            </div>
             <div className={styles.achievements}>
               <div>
                 <h4>250 міст</h4>

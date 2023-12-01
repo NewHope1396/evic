@@ -6,11 +6,20 @@
   background-size: cover;
   color: $White;
   text-align: start;
+
+  @media (max-width: 1279px) {
+    margin-top: 96px;
+  }
 }
 
 .textContainer {
   width: 600px;
   padding: 160px 80px;
+
+  @media (max-width: 1279px) {
+    width: 664px;
+    padding: 120px 32px;
+  }
 
   & h1 {
     font-size: 56px;
@@ -29,6 +38,11 @@
 
 .btnContainer {
   width: 470px;
+
+  @media (max-width: 1279px) {
+    width: 402px;
+  }
+
   display: flex;
   justify-content: space-between;
 }

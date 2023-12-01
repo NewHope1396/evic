@@ -3,6 +3,11 @@
 .btn {
   padding: 18px 32px;
   font-size: 20px;
+
+  @media (max-width: 1279px) {
+    font-size: 16px;
+  }
+
   font-weight: 500;
   border: 2px solid $Red-1;
   cursor: pointer;

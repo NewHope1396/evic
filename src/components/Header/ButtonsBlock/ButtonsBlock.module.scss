@@ -26,6 +26,10 @@
   line-height: 16px;
   margin-right: 80px;
 
+  @media (max-width: 1279px) {
+    margin-right: 32px;
+  }
+
   &:hover {
     .svgContainer {
       background-color: $Red-2L;
@@ -48,5 +52,27 @@
 }
 
 .showButtons {
-  transform: translateX(-80px);
+  @media (min-width: 1280px) {
+    transform: translateX(-80px);
+  }
+}
+
+.menu {
+  padding: 0;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: none;
+  margin-right: 32px;
+  background-color: $White;
+
+  &:hover {
+    opacity: 0.3;
+  }
+
+  @media (min-width: 1280px) {
+    display: none;
+  }
 }

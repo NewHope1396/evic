@@ -24,6 +24,10 @@
 
     & li {
       width: 384px;
+
+      @media (max-width: 1440px) and (min-width: 1280px) {
+        width: 320px;
+      }
       background-color: $Background;
       margin-bottom: 32px;
       padding: 16px;

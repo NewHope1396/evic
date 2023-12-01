@@ -3,7 +3,7 @@ import styles from "./Advantages.module.scss";
 import Star from "@/public/Star.svg";
 import Certificate from "@/public/Certificate.svg";
 import Cheque from "@/public/Cheque.svg";
-import { ST } from "next/dist/shared/lib/utils";
+import Always from "@/public/always.svg";
 import Container from "../Container/Container";
 
 const Advantages = () => {
@@ -33,7 +33,7 @@ const Advantages = () => {
           </li>
           <li>
             <div className={styles.imgContainer}>
-              <Image alt="advantage-icon" src={Star}></Image>
+              <Image alt="advantage-icon" src={Always}></Image>
             </div>
             <h3>Працюємо цілодобово</h3>
             <p>
