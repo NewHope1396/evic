@@ -5,6 +5,10 @@
 
   .pricesContainer {
     padding: 80px;
+
+    @media (max-width: 1279px) {
+      padding: 80px 32px;
+    }
   }
 
   & h2 {
@@ -25,9 +29,11 @@
     & li {
       width: 384px;
 
-      @media (max-width: 1440px) and (min-width: 1280px) {
-        width: 320px;
+      @media (max-width: 1439px) {
+        min-width: 182px;
+        width: calc((100% - 128px) / 3);
       }
+
       background-color: $Background;
       margin-bottom: 32px;
       padding: 16px;
@@ -55,7 +61,12 @@
         font-weight: 700;
         font-size: 20px;
         line-height: 22px;
-        padding-bottom: 16px;
+        margin-bottom: 16px;
+
+        @media (max-width: 1279px) {
+          font-size: 18px;
+          line-height: 19.8px;
+        }
       }
 
       .price {
@@ -63,6 +74,11 @@
         font-weight: 400;
         font-size: 18px;
         line-height: 25.2px;
+
+        @media (max-width: 1279px) {
+          font-size: 18px;
+          line-height: 25.2px;
+        }
       }
     }
   }

@@ -10,23 +10,42 @@
   justify-content: space-between;
   align-items: center;
 
+  @media (max-width: 1279px) {
+    justify-content: center;
+    padding: 80px 32px;
+  }
+
   .textContainer {
     width: 600px;
     padding: 32px 0;
     text-align: start;
+
+    @media (max-width: 1279px) {
+      width: 100%;
+      max-width: 800px;
+    }
 
     & h3 {
       font-size: 48px;
       font-weight: 700;
       line-height: 52.8px;
 
-      padding-bottom: 64px;
+      margin-bottom: 64px;
+
+      @media (max-width: 1279px) {
+        margin-bottom: 48px;
+      }
     }
 
     & p {
       font-size: 18px;
       font-weight: 400;
       line-height: 25.2px;
+
+      @media (max-width: 1279px) {
+        font-size: 16px;
+        line-height: 22.4px;
+      }
     }
 
     .firstPart {
@@ -41,12 +60,7 @@
       display: flex;
 
       & div {
-        width: 288px;
         margin-bottom: 64px;
-
-        @media (max-width: 1440px) and (min-width: 1280px) {
-          width: 240px;
-        }
 
         & h4 {
           font-size: 24px;
@@ -54,6 +68,11 @@
           line-height: 26.4px;
 
           padding-bottom: 16px;
+
+          @media (max-width: 1279px) {
+            font-size: 18px;
+            line-height: 19.8px;
+          }
         }
 
         & p {
@@ -106,6 +125,13 @@
 .tabletImg {
   @media (min-width: 1280px) {
     display: none;
+  }
+
+  margin-bottom: 48px;
+
+  & img {
+    width: 100%;
+    height: 100%;
   }
 }
 
