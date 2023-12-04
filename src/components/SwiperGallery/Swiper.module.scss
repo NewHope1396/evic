@@ -12,7 +12,7 @@
   border-radius: 50% !important;
   cursor: pointer !important;
   transition: $BGC-anim;
-  top: 166px !important;
+  top: calc(50% - 12px) !important;
 
   &:hover {
     background-color: $Red-2L !important;
@@ -25,9 +25,9 @@
 
 .swiperFeedbacks-button-next,
 .swiperFeedbacks-button-prev {
-  z-index: 100;
+  z-index: 1;
   background-color: $White;
-  top: 50% !important;
+  top: calc(50% - 24px) !important;
 }
 
 .swiper {

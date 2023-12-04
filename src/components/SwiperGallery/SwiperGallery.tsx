@@ -151,18 +151,18 @@ export const SwiperGallery = () => {
                       src={galleryPhotos.Photo3}
                     />
                   </li>
-                  <li>
-                    <Image
-                      alt="evic work example photo"
-                      src={galleryPhotos.Photo4}
-                    />
-                  </li>
                 </ul>
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className={styles.swiperItem}>
                 <ul>
+                  <li>
+                    <Image
+                      alt="evic work example photo"
+                      src={galleryPhotos.Photo4}
+                    />
+                  </li>
                   <li>
                     <Image
                       alt="evic work example photo"
@@ -175,6 +175,12 @@ export const SwiperGallery = () => {
                       src={galleryPhotos.Photo6}
                     />
                   </li>
+                </ul>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className={styles.swiperItem}>
+                <ul>
                   <li>
                     <Image
                       alt="evic work example photo"
@@ -187,18 +193,18 @@ export const SwiperGallery = () => {
                       src={galleryPhotos.Photo8}
                     />
                   </li>
-                </ul>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className={styles.swiperItem}>
-                <ul>
                   <li>
                     <Image
                       alt="evic work example photo"
                       src={galleryPhotos.Photo1}
                     />
                   </li>
+                </ul>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className={styles.swiperItem}>
+                <ul>
                   <li>
                     <Image
                       alt="evic work example photo"
