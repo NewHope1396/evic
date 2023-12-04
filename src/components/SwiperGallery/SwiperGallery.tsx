@@ -22,6 +22,7 @@ export const SwiperGallery = () => {
             navigation={{
               nextEl: ".swiper-button-next",
               prevEl: ".swiper-button-prev",
+              disabledClass: "swiper-button-disabled",
             }}
           >
             <div className="swiper-button-next"></div>

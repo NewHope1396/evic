@@ -1,7 +1,10 @@
 @import "../../app/variables.module.scss";
 
 .swiper-button-next,
-.swiper-button-prev {
+.swiper-button-prev,
+.swiperFeedbacks-button-next,
+.swiperFeedbacks-button-prev {
+  position: absolute;
   display: block;
   width: 24px !important;
   height: 24px !important;
@@ -20,18 +23,27 @@
   }
 }
 
+.swiperFeedbacks-button-next,
+.swiperFeedbacks-button-prev {
+  z-index: 100;
+  background-color: $White;
+  top: 50% !important;
+}
+
 .swiper {
   padding-bottom: 76px !important;
 }
 
+.swiperFeedbacks-button-next,
 .swiper-button-next {
-  right: 0 !important;
   background-image: url("../../public/right.svg") !important;
+  right: 0 !important;
 }
 
+.swiperFeedbacks-button-prev,
 .swiper-button-prev {
+  background-image: url("../../public/left.svg") !important;
   left: 0 !important;
-  background-image: url("../../public/left.svg");
 }
 
 .swiper-pagination {
@@ -48,4 +60,9 @@
   &-active {
     background-color: $Red-1 !important;
   }
+}
+
+.swiper-button-disabled {
+  opacity: 0.35;
+  pointer-events: none;
 }
