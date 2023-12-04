@@ -6,7 +6,7 @@ import carFetchers from "@/helpers/carFetchers";
 import Stages from "@/components/Stages/Stages";
 import { Header } from "@/components/Header/Header";
 import { SwiperGallery } from "@/components/SwiperGallery/SwiperGallery";
-import { SwiperFeedbacks } from "@/components/SwierFeedbacks/SwiperFeedbacks";
+import { SwiperFeedbacks } from "@/components/SwiperFeedbacks/SwiperFeedbacks";
 
 export default async function App() {
   const makes = await carFetchers.getMakes();

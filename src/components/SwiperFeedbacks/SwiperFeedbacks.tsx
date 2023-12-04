@@ -7,7 +7,7 @@ import styles from "./SwiperFeedbacks.module.scss";
 
 export const SwiperFeedbacks = () => {
   return (
-    <section>
+    <section id="feedbacks">
       <Container>
         <div className={styles.swiperContainer}>
           <Swiper
