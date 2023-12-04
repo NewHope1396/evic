@@ -3,9 +3,13 @@
 .formContainer {
   padding: 48px;
   background-color: $Background;
-  width: 503px;
   position: relative;
+  width: 508px;
   color: $Black;
+
+  @media (max-height: 900px) and (min-width: 500px) {
+    transform: scale(70%);
+  }
 
   & label {
     display: block;
