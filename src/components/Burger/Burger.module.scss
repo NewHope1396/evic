@@ -1,0 +1,33 @@
+@import "../../app/variables.module.scss";
+
+.burger {
+  position: fixed;
+  z-index: 3;
+
+  padding: 80px 32px;
+  width: calc(100vw - 64px);
+  height: calc(100vh - 160px);
+  top: 0;
+  left: 0;
+  background-color: $Background;
+}
+
+.closeBtn {
+  display: flex;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  justify-content: center;
+  align-items: center;
+  background-color: $Background;
+  border: 1px solid $Background;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  transition: $Border-anim;
+
+  &:hover {
+    border-color: $Red-1;
+  }
+
+}

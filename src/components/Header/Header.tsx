@@ -9,10 +9,12 @@ import { IMakeData } from "@/interfaces/make.interface";
 import { Modal } from "../Modal/Modal";
 import { useState } from "react";
 import Container from "../Container/Container";
+import { Burger } from "../Burger/Burger";
 
 export const Header: FC<IMakeData> = (makes) => {
   const [isOrderModalOpen, setIsOrderModalOpen] = useState(false);
   const [isConsultationModalOpen, setIsConsultationModalOpen] = useState(false);
+  const [isBurgerOpen, setIsBurgerOpen] = useState(false);
 
   return (
     <>
@@ -23,6 +25,7 @@ export const Header: FC<IMakeData> = (makes) => {
             <ButtonsBlock
               setIsOrderModalOpen={setIsOrderModalOpen}
               setIsConsultationModalOpen={setIsConsultationModalOpen}
+              setIsBurgerOpen={setIsBurgerOpen}
             />
           </div>
         </Container>
@@ -42,6 +45,7 @@ export const Header: FC<IMakeData> = (makes) => {
           setModalOpen={setIsConsultationModalOpen}
         />
       )}
+      {isBurgerOpen && <Burger setIsBurgerOpen={setIsBurgerOpen} />}
     </>
   );
 };

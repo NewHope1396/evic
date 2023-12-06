@@ -39,7 +39,7 @@ export default function Footer() {
                   </ReactScrollLink>
                 </li>
                 <li>
-                  <ReactScrollLink to="feedbacks" spy={true} offset={-660}>
+                  <ReactScrollLink to="feedbacks" spy={true} offset={-500}>
                     Відгуки
                   </ReactScrollLink>
                 </li>

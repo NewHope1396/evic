@@ -11,7 +11,7 @@ import Insta from "@/public/instagram.svg";
 
 export const SwiperGallery = () => {
   return (
-    <section className={styles.swiperSection}>
+    <section id="gallery" className={styles.swiperSection}>
       <Container>
         <div className={styles.swiperContainer}>
           <h2>Галерея робіт</h2>

@@ -9,12 +9,13 @@ import Link from "next/link";
 import { ConsultationBtn } from "./Buttons/ConsultationBtn";
 import { OrderBtn } from "./Buttons/OrderBtn";
 import Menu from "@/public/menu.svg";
-import { Button } from "react-scroll";
+import { blockScroll } from "@/helpers/blockScroll";
 
 export const ButtonsBlock: FC<{
   setIsOrderModalOpen: Function;
   setIsConsultationModalOpen: Function;
-}> = ({ setIsOrderModalOpen, setIsConsultationModalOpen }) => {
+  setIsBurgerOpen: Function;
+}> = ({ setIsOrderModalOpen, setIsConsultationModalOpen, setIsBurgerOpen }) => {
   const logY = debounce(() => {
     if (window.scrollY > 500) {
       setIsHidden(false);
@@ -48,7 +49,13 @@ export const ButtonsBlock: FC<{
 
         <p>+380993290551</p>
       </Link>
-      <button className={styles.menu}>
+      <button
+        onClick={() => {
+          setIsBurgerOpen(true);
+          blockScroll();
+        }}
+        className={styles.menu}
+      >
         <Image alt="menu icon" src={Menu} />
       </button>
       <div className={styles.btnContainer}>
