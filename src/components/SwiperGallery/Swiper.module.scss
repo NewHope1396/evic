@@ -32,6 +32,10 @@
 
 .swiper {
   padding-bottom: 76px !important;
+
+  @media (max-width: 767px) {
+    padding: 40px 16px !important;
+  }
 }
 
 .swiperFeedbacks-button-next,

@@ -9,6 +9,10 @@
     @media (max-width: 1279px) {
       padding: 80px 32px;
     }
+
+    @media (max-width: 767px) {
+      padding: 60px 32px;
+    }
   }
 
   & h2 {
@@ -19,12 +23,23 @@
     font-size: 48px;
     font-weight: 700;
     line-height: 52.8px;
+
+    @media (max-width: 767px) {
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 35.2px;
+      margin-bottom: 24px;
+    }
   }
 
   & ul {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+
+    @media (max-width: 767px) {
+      display: block;
+    }
 
     & li {
       width: 384px;
@@ -38,6 +53,31 @@
       margin-bottom: 32px;
       padding: 16px;
 
+      &:not(:nth-child(3)) {
+        margin-right: 16px;
+
+        @media (max-width: 767px) {
+          margin: 0;
+        }
+      }
+
+      &:last-child {
+        margin-right: 0;
+
+        @media (max-width: 767px) {
+          margin: 0;
+        }
+      }
+
+      @media (max-width: 767px) {
+        width: calc(100% - 32px);
+        margin: 0;
+
+        &:not(:last-child) {
+          margin-bottom: 16px;
+        }
+      }
+
       & div {
         width: 80px;
         height: 64px;
@@ -46,14 +86,6 @@
         align-items: center;
         margin: 0 auto;
         padding-bottom: 16px;
-      }
-
-      &:not(:nth-child(3)) {
-        margin-right: 16px;
-      }
-
-      &:last-child {
-        margin-right: 0;
       }
 
       .type {

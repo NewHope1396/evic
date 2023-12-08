@@ -17,6 +17,8 @@ export const BurgerNavigation: FC<{ setIsBurgerOpen: Function }> = ({
         }}
         className={styles.logo}
         to="hero"
+        spy={true}
+        offset={-100}
       >
         EVIC
       </Link>

@@ -11,6 +11,14 @@
     transform: scale(70%);
   }
 
+  @media (max-width: 499px) {
+    transform: scale(60%);
+  }
+
+  @media (max-width: 300px) {
+    transform: scale(50%);
+  }
+
   & label {
     display: block;
     margin-bottom: 4px;
@@ -136,6 +144,7 @@
   & img {
     border: 1px solid $Background;
     border-radius: 50%;
+    transition: $Border-anim;
 
     &:hover {
       border: 1px solid $Red-1;

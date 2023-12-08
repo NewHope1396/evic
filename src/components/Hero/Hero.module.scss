@@ -21,11 +21,23 @@
     padding: 120px 32px;
   }
 
+  @media (max-width: 767px) {
+    padding: 60px 16px;
+    width: calc(100% - 32px);
+  }
+
   & h1 {
     font-size: 56px;
     font-weight: 700;
     margin-bottom: 48px;
     line-height: 61.6px;
+
+    @media (max-width: 767px) {
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 35.2px;
+      margin-bottom: 24px;
+    }
   }
 
   & .heroText {
@@ -33,6 +45,13 @@
     font-weight: 400;
     margin-bottom: 64px;
     line-height: 25.2px;
+
+    @media (max-width: 767px) {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 22.4px;
+      margin-bottom: 60px;
+    }
   }
 }
 
@@ -41,6 +60,11 @@
 
   @media (max-width: 1279px) {
     width: 402px;
+  }
+
+  @media (max-width: 767px) {
+    width: 100%;
+    display: block;
   }
 
   display: flex;

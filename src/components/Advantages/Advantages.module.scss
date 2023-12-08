@@ -16,9 +16,16 @@
       justify-content: center;
     }
 
+    @media (max-width: 767px) {
+      display: flex;
+      flex-direction: column;
+      padding: 60px 32px;
+    }
+
     & li {
       background-color: $White;
       width: 276px;
+
       box-shadow: 0px 0px 10px 0px #4c46461a;
       padding: 16px;
 
@@ -56,6 +63,14 @@
 
       &:not(:last-child) {
         margin-right: 16px;
+
+        @media (max-width: 767px) {
+          margin-right: 0;
+        }
+      }
+
+      @media (max-width: 767px) {
+        width: calc(100% - 32px);
       }
     }
   }
