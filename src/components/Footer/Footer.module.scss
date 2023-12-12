@@ -12,9 +12,13 @@
     padding: 24px 32px;
   }
 
+  @media (max-width: 767px) {
+    padding: 24px 16px;
+  }
+
   text-align: center;
 
-  & div {
+  & .navWrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -23,6 +27,10 @@
     @media (max-width: 1279px) {
       margin-bottom: 16px;
       align-items: flex-start;
+    }
+
+    @media (max-width: 767px) {
+      display: block;
     }
 
     & p {
@@ -36,6 +44,15 @@
 
         @media (max-width: 1279px) {
           display: block;
+        }
+
+        @media (max-width: 767px) {
+          display: grid;
+          grid-template-columns: 134px 78px 72px;
+          justify-items: start;
+          grid-gap: 16px;
+
+          margin-bottom: 48px;
         }
 
         & li {
@@ -56,6 +73,36 @@
             }
           }
 
+          @media (max-width: 767px) {
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 16px;
+
+            padding: 8px;
+            margin: 0 !important;
+          }
+
+          &:nth-child(3) {
+            @media (max-width: 767px) {
+              grid-row-start: 2;
+              grid-column-start: 1;
+            }
+          }
+
+          &:nth-child(4) {
+            @media (max-width: 767px) {
+              grid-row-start: 2;
+              grid-column-start: 2;
+            }
+          }
+
+          &:nth-child(5) {
+            @media (max-width: 767px) {
+              grid-row-start: 2;
+              grid-column-start: 3;
+            }
+          }
+
           & a {
             color: $White;
           }
@@ -63,7 +110,9 @@
       }
     }
 
-    & .socials {
+    .socials,
+    .mobileSocials {
+      display: flex;
       margin-bottom: 0;
 
       & a {
@@ -96,4 +145,32 @@
 
 .logo {
   color: $White !important;
+}
+
+.socials {
+  @media (max-width: 767px) {
+    display: none !important;
+  }
+}
+
+.mobileSocials {
+  @media (min-width: 768px) {
+    display: none !important;
+  }
+}
+
+.logoBlock {
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: 767px) {
+    margin-bottom: 48px;
+  }
+}
+
+.copy,
+.lowerText {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19.6px;
 }

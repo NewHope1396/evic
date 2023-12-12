@@ -14,8 +14,18 @@ export default function Footer() {
     <footer className={styles.footer}>
       <Container>
         <div className={styles.footerContainer}>
-          <div>
-            <Logo option={styles.logo} />
+          <div className={styles.navWrapper}>
+            <div className={styles.logoBlock}>
+              <Logo option={styles.logo} />
+              <div className={styles.mobileSocials}>
+                <Link href={""}>
+                  <Image alt="telegram icon" src={Telegram}></Image>
+                </Link>
+                <Link href={""}>
+                  <Image alt="instagram icon" src={Instagram}></Image>
+                </Link>
+              </div>
+            </div>
             <nav>
               <ul>
                 <li>
@@ -54,7 +64,9 @@ export default function Footer() {
               </Link>
             </div>
           </div>
-          <p>Evic.vin @ 2023. All rights reserved.</p>
+          <p className={styles.lowerText}>
+            Evic.vin @ 2023. All rights reserved.
+          </p>
           <p className={styles.copy}>&copy;Created by NewHope1396</p>
         </div>
       </Container>

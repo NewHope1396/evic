@@ -10,66 +10,10 @@ export const SwiperFeedbacks = () => {
     <section id="feedbacks">
       <Container>
         <div className={styles.swiperContainer}>
-          <Swiper
-            className={styles.desktopSwiper}
-            modules={[Navigation, Pagination]}
-            pagination={{ clickable: true }}
-            navigation={{
-              nextEl: ".swiperFeedbacks-button-next",
-              prevEl: ".swiperFeedbacks-button-prev",
-            }}
-          >
-            <div className="swiperFeedbacks-button-next"></div>
-            <div className="swiperFeedbacks-button-prev"></div>
-            <SwiperSlide className={styles.swiperItem}>
-              <h3 className={styles.title}>Тетяна</h3>
-              <p className={styles.text}>
-                Велике дякую водію евакуатора Вові! Оперативно приїхав,
-                професійно завантажив, доставив на СТО авто, з розумінням своєї
-                справи, я просто в захваті. Рекомендую всім і велике дякую
-                професіоналам своєї справи!
-              </p>
-            </SwiperSlide>
-            <SwiperSlide className={styles.swiperItem}>
-              <h3 className={styles.title}>Тетяна</h3>
-              <p className={styles.text}>
-                Велике дякую водію евакуатора Вові! Оперативно приїхав,
-                професійно завантажив, доставив на СТО авто, з розумінням своєї
-                справи, я просто в захваті. Рекомендую всім і велике дякую
-                професіоналам своєї справи!
-              </p>
-            </SwiperSlide>
-            <SwiperSlide className={styles.swiperItem}>
-              <h3 className={styles.title}>Тетяна</h3>
-              <p className={styles.text}>
-                Велике дякую водію евакуатора Вові! Оперативно приїхав,
-                професійно завантажив, доставив на СТО авто, з розумінням своєї
-                справи, я просто в захваті. Рекомендую всім і велике дякую
-                професіоналам своєї справи!
-              </p>
-            </SwiperSlide>
-            <SwiperSlide className={styles.swiperItem}>
-              <h3 className={styles.title}>Тетяна</h3>
-              <p className={styles.text}>
-                Велике дякую водію евакуатора Вові! Оперативно приїхав,
-                професійно завантажив, доставив на СТО авто, з розумінням своєї
-                справи, я просто в захваті. Рекомендую всім і велике дякую
-                професіоналам своєї справи!
-              </p>
-            </SwiperSlide>
-            <SwiperSlide className={styles.swiperItem}>
-              <h3 className={styles.title}>Тетяна</h3>
-              <p className={styles.text}>
-                Велике дякую водію евакуатора Вові! Оперативно приїхав,
-                професійно завантажив, доставив на СТО авто, з розумінням своєї
-                справи, я просто в захваті. Рекомендую всім і велике дякую
-                професіоналам своєї справи!
-              </p>
-            </SwiperSlide>
-          </Swiper>
+          <h2 className={styles.title}>Відгуки клієнтів</h2>
 
           <Swiper
-            className={styles.tabletSwiper}
+            className={styles.swiper}
             modules={[Navigation, Pagination]}
             pagination={{ clickable: true }}
             navigation={{
@@ -80,7 +24,7 @@ export const SwiperFeedbacks = () => {
             <div className="swiperFeedbacks-button-next"></div>
             <div className="swiperFeedbacks-button-prev"></div>
             <SwiperSlide className={styles.swiperItem}>
-              <h3 className={styles.title}>Тетяна</h3>
+              <h3 className={styles.name}>Тетяна</h3>
               <p className={styles.text}>
                 Велике дякую водію евакуатора Вові! Оперативно приїхав,
                 професійно завантажив, доставив на СТО авто, з розумінням своєї
@@ -89,7 +33,7 @@ export const SwiperFeedbacks = () => {
               </p>
             </SwiperSlide>
             <SwiperSlide className={styles.swiperItem}>
-              <h3 className={styles.title}>Тетяна</h3>
+              <h3 className={styles.name}>Тетяна</h3>
               <p className={styles.text}>
                 Велике дякую водію евакуатора Вові! Оперативно приїхав,
                 професійно завантажив, доставив на СТО авто, з розумінням своєї
@@ -98,7 +42,7 @@ export const SwiperFeedbacks = () => {
               </p>
             </SwiperSlide>
             <SwiperSlide className={styles.swiperItem}>
-              <h3 className={styles.title}>Тетяна</h3>
+              <h3 className={styles.name}>Тетяна</h3>
               <p className={styles.text}>
                 Велике дякую водію евакуатора Вові! Оперативно приїхав,
                 професійно завантажив, доставив на СТО авто, з розумінням своєї
@@ -107,7 +51,7 @@ export const SwiperFeedbacks = () => {
               </p>
             </SwiperSlide>
             <SwiperSlide className={styles.swiperItem}>
-              <h3 className={styles.title}>Тетяна</h3>
+              <h3 className={styles.name}>Тетяна</h3>
               <p className={styles.text}>
                 Велике дякую водію евакуатора Вові! Оперативно приїхав,
                 професійно завантажив, доставив на СТО авто, з розумінням своєї
@@ -116,65 +60,7 @@ export const SwiperFeedbacks = () => {
               </p>
             </SwiperSlide>
             <SwiperSlide className={styles.swiperItem}>
-              <h3 className={styles.title}>Тетяна</h3>
-              <p className={styles.text}>
-                Велике дякую водію евакуатора Вові! Оперативно приїхав,
-                професійно завантажив, доставив на СТО авто, з розумінням своєї
-                справи, я просто в захваті. Рекомендую всім і велике дякую
-                професіоналам своєї справи!
-              </p>
-            </SwiperSlide>
-          </Swiper>
-
-          <Swiper
-            className={styles.mobileSwiper}
-            modules={[Navigation, Pagination]}
-            pagination={{ clickable: true }}
-            navigation={{
-              nextEl: ".swiperFeedbacks-button-next",
-              prevEl: ".swiperFeedbacks-button-prev",
-            }}
-          >
-            <div className="swiperFeedbacks-button-next"></div>
-            <div className="swiperFeedbacks-button-prev"></div>
-            <SwiperSlide className={styles.swiperItem}>
-              <h3 className={styles.title}>Тетяна</h3>
-              <p className={styles.text}>
-                Велике дякую водію евакуатора Вові! Оперативно приїхав,
-                професійно завантажив, доставив на СТО авто, з розумінням своєї
-                справи, я просто в захваті. Рекомендую всім і велике дякую
-                професіоналам своєї справи!
-              </p>
-            </SwiperSlide>
-            <SwiperSlide className={styles.swiperItem}>
-              <h3 className={styles.title}>Тетяна</h3>
-              <p className={styles.text}>
-                Велике дякую водію евакуатора Вові! Оперативно приїхав,
-                професійно завантажив, доставив на СТО авто, з розумінням своєї
-                справи, я просто в захваті. Рекомендую всім і велике дякую
-                професіоналам своєї справи!
-              </p>
-            </SwiperSlide>
-            <SwiperSlide className={styles.swiperItem}>
-              <h3 className={styles.title}>Тетяна</h3>
-              <p className={styles.text}>
-                Велике дякую водію евакуатора Вові! Оперативно приїхав,
-                професійно завантажив, доставив на СТО авто, з розумінням своєї
-                справи, я просто в захваті. Рекомендую всім і велике дякую
-                професіоналам своєї справи!
-              </p>
-            </SwiperSlide>
-            <SwiperSlide className={styles.swiperItem}>
-              <h3 className={styles.title}>Тетяна</h3>
-              <p className={styles.text}>
-                Велике дякую водію евакуатора Вові! Оперативно приїхав,
-                професійно завантажив, доставив на СТО авто, з розумінням своєї
-                справи, я просто в захваті. Рекомендую всім і велике дякую
-                професіоналам своєї справи!
-              </p>
-            </SwiperSlide>
-            <SwiperSlide className={styles.swiperItem}>
-              <h3 className={styles.title}>Тетяна</h3>
+              <h3 className={styles.name}>Тетяна</h3>
               <p className={styles.text}>
                 Велике дякую водію евакуатора Вові! Оперативно приїхав,
                 професійно завантажив, доставив на СТО авто, з розумінням своєї

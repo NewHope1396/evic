@@ -21,6 +21,10 @@
   &::after {
     content: "" !important;
   }
+
+  @media (max-width: 767px) {
+    display: none !important;
+  }
 }
 
 .swiperFeedbacks-button-next,
@@ -35,6 +39,7 @@
 
   @media (max-width: 767px) {
     padding: 40px 16px !important;
+    padding-top: 0px !important;
   }
 }
 

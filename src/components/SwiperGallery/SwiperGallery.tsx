@@ -232,7 +232,9 @@ export const SwiperGallery = () => {
             className={styles.mobileSwiper}
             modules={[Navigation, Pagination, EffectCoverflow]}
             effect="coverflow"
-            pagination={{ clickable: true }}
+            pagination={{
+              clickable: true,
+            }}
             navigation={{
               nextEl: ".swiper-button-next",
               prevEl: ".swiper-button-prev",
