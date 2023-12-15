@@ -17,16 +17,19 @@ import { unlockScroll } from "@/helpers/blockScroll";
 import Close from "@/public/x.svg";
 import RedStar from "@/public/redStar.svg";
 
-const Form: FC<{ makes: IMakeData; setModalOpen: Function }> = ({
+const Form: FC<{ makes: IMakeData; setModalOpen: Function; toast: any }> = ({
   makes,
   setModalOpen,
+  toast,
 }) => {
   const makesRef = useRef<SelectInstance>(null);
   const modelsRef = useRef<SelectInstance>(null);
+  const areaRef = useRef<SelectInstance>(null);
 
   const resetSelects = () => {
     makesRef?.current?.clearValue();
     modelsRef?.current?.clearValue();
+    areaRef?.current?.clearValue();
   };
 
   const {
@@ -38,7 +41,11 @@ const Form: FC<{ makes: IMakeData; setModalOpen: Function }> = ({
   } = useForm<TypeInputs>({ resolver: yupResolver(formSchema) });
 
   const onSubmit: SubmitHandler<TypeInputs> = (data) => {
-    postData({ ...data, type: "order" });
+    toast.promise(postData({ ...data, type: "order" }), {
+      pending: "Зачекайте...",
+      success: "Запит надіслано👌 Очікуйте на дзвінок",
+      error: "Оу, щось пішло не так 🤯",
+    });
     resetSelects();
     reset();
   };
@@ -164,6 +171,7 @@ const Form: FC<{ makes: IMakeData; setModalOpen: Function }> = ({
               <Select
                 {...field}
                 id="area"
+                ref={areaRef}
                 placeholder={""}
                 className="areaSelect"
                 classNamePrefix="select"

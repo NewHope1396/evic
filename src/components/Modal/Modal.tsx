@@ -3,7 +3,8 @@ import Form from "../Forms/OrderForm/Form";
 import styles from "./Modal.module.scss";
 import { IMakeData } from "@/interfaces/make.interface";
 import { ConsultationForm } from "../Forms/ConsultationForm/ConsultationForm";
-import { unlockScroll } from "@/helpers/blockScroll";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const Modal: FC<{
   makes: IMakeData;
@@ -14,12 +15,13 @@ export const Modal: FC<{
     <div className={styles.overlay}>
       <div>
         {option === "order" && (
-          <Form setModalOpen={setModalOpen} makes={makes} />
+          <Form setModalOpen={setModalOpen} makes={makes} toast={toast} />
         )}
         {option === "consultation" && (
-          <ConsultationForm setModalOpen={setModalOpen} />
+          <ConsultationForm setModalOpen={setModalOpen} toast={toast} />
         )}
       </div>
+      <ToastContainer />
     </div>
   );
 };

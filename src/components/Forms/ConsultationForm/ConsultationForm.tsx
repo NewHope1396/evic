@@ -12,9 +12,10 @@ import Image from "next/image";
 import Close from "@/public/x.svg";
 import RedStar from "@/public/redStar.svg";
 
-export const ConsultationForm: FC<{ setModalOpen: Function }> = ({
-  setModalOpen,
-}) => {
+export const ConsultationForm: FC<{
+  setModalOpen: Function;
+  toast: any;
+}> = ({ setModalOpen, toast }) => {
   const {
     register,
     handleSubmit,
@@ -25,7 +26,11 @@ export const ConsultationForm: FC<{ setModalOpen: Function }> = ({
   });
 
   const onSubmit: SubmitHandler<TypeConsultationInputs> = (data) => {
-    postData({ ...data, type: "consultation" });
+    toast.promise(postData({ ...data, type: "consultation" }), {
+      pending: "Зачекайте...",
+      success: "Запит надіслано👌 Очікуйте на дзвінок",
+      error: "Оу, щось пішло не так 🤯",
+    });
     reset();
   };
 
